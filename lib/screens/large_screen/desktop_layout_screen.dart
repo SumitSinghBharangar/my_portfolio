@@ -26,33 +26,41 @@ class _DesktopLayoutScreenState extends State<DesktopLayoutScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    children: [
-                      Row(
-                        children: [
-                          HeaderTextWidget(
-                            size: size,
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                  Expanded(
-                      child: Container(
-                    height: size.height * 0.75,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+              Container(
+                margin: EdgeInsets.symmetric(vertical: size.height * 0.18),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
-                        RotatingImageContainer(),
+                        Row(
+                          children: [
+                            HeaderTextWidget(
+                              size: size,
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            // Social_Large(size: size)
+                          ],
+                        )
                       ],
                     ),
-                  ))
-                ],
+                    Expanded(
+                        child: Container(
+                      height: size.height * 0.75,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          RotatingImageContainer(),
+                        ],
+                      ),
+                    ))
+                  ],
+                ),
               )
             ],
           ),

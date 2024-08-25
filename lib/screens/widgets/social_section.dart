@@ -4,6 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/screens/widgets/social_widget.dart';
 
+import 'download_cv_widget.dart';
+
 class SocialSection extends StatelessWidget {
   const SocialSection({super.key});
 
@@ -16,31 +18,7 @@ class SocialSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
-            height: 50,
-            width: 250,
-            decoration: BoxDecoration(
-                color: Colors.transparent,
-                borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: AppColors.studio)),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Download CV",
-                  style: TextStyle(color: AppColors.studio),
-                ),
-                const SizedBox.square(
-                  dimension: 12,
-                ),
-                FaIcon(
-                  FontAwesomeIcons.download,
-                  color: AppColors.studio,
-                  size: 18,
-                )
-              ],
-            ),
-          ),
+          DownloadCvWidget(),
           const SizedBox(
             width: 20,
           ),

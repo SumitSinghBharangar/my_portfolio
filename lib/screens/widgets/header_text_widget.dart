@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/colors.dart';
+import 'package:my_portfolio/screens/widgets/download_cv_widget.dart';
+import 'package:my_portfolio/screens/widgets/social_widget.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 import 'social_section.dart';
@@ -13,7 +15,8 @@ class HeaderTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(
-          horizontal: size.width * 0.07, vertical: size.width * 0.18),
+        horizontal: size.width * 0.07,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -47,9 +50,33 @@ class HeaderTextWidget extends StatelessWidget {
             ),
           ),
           Container(
-              width: size.width*0.5,
-              child: const SocialSection(),
+            width: size.width * 0.5,
+            child: const SocialSection(),
           )
+        ],
+      ),
+    );
+  }
+}
+
+class Social_Large extends StatelessWidget {
+  final Size size;
+  const Social_Large({
+    super.key,
+    required this.size,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: size.width * 0.5,
+      child: Row(
+        children: [
+          DownloadCvWidget(),
+          SizedBox(
+            width: 20,
+          ),
+          SocialWidget()
         ],
       ),
     );
