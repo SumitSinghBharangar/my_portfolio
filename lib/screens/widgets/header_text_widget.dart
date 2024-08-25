@@ -10,7 +10,11 @@ class HeaderTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(
+          horizontal: size.width * 0.07, vertical: size.width * 0.18),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             "I am Sumit",
@@ -24,14 +28,26 @@ class HeaderTextWidget extends StatelessWidget {
             "App Developer +\nAndroid & ios developer",
             colors: [AppColors.studio, AppColors.paleSlate],
             style: TextStyle(
-              fontSize: size.width * 0.0025,
+              fontSize: size.width * 0.040,
               fontFamily: "Poppins",
               fontWeight: FontWeight.bold,
             ),
           ),
           SizedBox(
-            height: size.width * 0.05,
+            width: size.width * 0.5,
+            child: Text(
+              "I’m a passionate Flutter developer with expertise in creating high-performance, cross-platform mobile applications. My strong foundation in Dart, Firebase, and seamless API integration allows me to bring ideas to life with clean, efficient, and scalable code.",
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.white,
+                fontFamily: "Poppins",
+              ),
+            ),
           ),
+          Container(
+              width: size.width*0.5,
+              child: SocialSection(),
+          )
         ],
       ),
     );
