@@ -1,6 +1,8 @@
-  import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/constants/colors.dart';
+import 'package:my_portfolio/screens/widgets/social_widget.dart';
 
 class SocialSection extends StatelessWidget {
   const SocialSection({super.key});
@@ -18,16 +20,31 @@ class SocialSection extends StatelessWidget {
             height: 50,
             width: 250,
             decoration: BoxDecoration(
-              color: Colors.transparent,
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: AppColors.studio)
-            ),
+                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: AppColors.studio)),
             child: Row(
-              children: [ 
-                
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Download CV",
+                  style: TextStyle(color: AppColors.studio),
+                ),
+                const SizedBox.square(
+                  dimension: 12,
+                ),
+                FaIcon(
+                  FontAwesomeIcons.download,
+                  color: AppColors.studio,
+                  size: 18,
+                )
               ],
             ),
-          )
+          ),
+          const SizedBox(
+            width: 20,
+          ),
+          Expanded(child: const SocialWidget())
         ],
       ),
     );

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/colors.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
+import 'social_section.dart';
+
 class HeaderTextWidget extends StatelessWidget {
   final Size size;
   const HeaderTextWidget({super.key, required this.size});
@@ -46,7 +48,7 @@ class HeaderTextWidget extends StatelessWidget {
           ),
           Container(
               width: size.width*0.5,
-              child: SocialSection(),
+              child: const SocialSection(),
           )
         ],
       ),

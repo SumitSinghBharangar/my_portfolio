@@ -5,6 +5,7 @@ import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/constants/styles.dart';
 
 import '../widgets/header_text_widget.dart';
+import '../widgets/rotating_image_container.dart';
 
 class DesktopLayoutScreen extends StatefulWidget {
   const DesktopLayoutScreen({super.key});
@@ -26,16 +27,31 @@ class _DesktopLayoutScreenState extends State<DesktopLayoutScreen> {
           child: Column(
             children: [
               Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Column(
                     children: [
                       Row(
                         children: [
-                          HeaderTextWidget(size: size,)
+                          HeaderTextWidget(
+                            size: size,
+                          )
                         ],
                       )
                     ],
-                  )
+                  ),
+                  Expanded(
+                      child: Container(
+                    height: size.height * 0.75,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        RotatingImageContainer(),
+                      ],
+                    ),
+                  ))
                 ],
               )
             ],
