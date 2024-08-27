@@ -15,8 +15,7 @@ class HeaderTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(
-        horizontal: size.width * 0.07,
-      ),
+          horizontal: size.width * 0.1, vertical: size.height * 0.1),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -24,10 +23,13 @@ class HeaderTextWidget extends StatelessWidget {
           Text(
             "I am Sumit",
             style: TextStyle(
-                fontSize: 26,
+                fontSize: size.width * 0.05,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontFamily: "Poppins"),
+          ),
+          SizedBox(
+            height: size.height * 0.05,
           ),
           GradientText(
             "App Developer +\nAndroid & ios developer",
@@ -38,59 +40,20 @@ class HeaderTextWidget extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(
-            width: size.width * 0.5,
-            child: Text(
-              "I’m a passionate Flutter developer with expertise in creating high-performance, cross-platform mobile applications. My strong foundation in Dart, Firebase, and seamless API integration allows me to bring ideas to life with clean, efficient, and scalable code.",
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.white,
-                fontFamily: "Poppins",
-              ),
-            ),
-          ),
+          // SizedBox(
+          //   width: size.width * 0.5,
+          //   child: Text(
+          //     "I’m a passionate Flutter developer with expertise in creating high-performance, cross-platform mobile applications. My strong foundation in Dart, Firebase, and seamless API integration allows me to bring ideas to life with clean, efficient, and scalable code.",
+          //     style: TextStyle(
+          //       fontSize: 16,
+          //       color: Colors.white,
+          //       fontFamily: "Poppins",
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
-  }
-}
-
-class GradientTextWidget extends StatelessWidget {
-  final TextAlign? alignment;
-  final String? text1;
-  final String? text2;
-  final Color? color1;
-  final Color? color2;
-  final double? fsize;
-  final FontWeight? fw;
-  final Size size;
-  const GradientTextWidget({
-    super.key,
-    required this.size,
-    this.alignment,
-    this.fw,
-    this.color1,
-    this.text1,
-    this.text2,
-    this.color2,
-    this.fsize,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return GradientText(
-      textAlign: size.width < 600 && alignment != null ? alignment : null,
-      "${text1}\n${text2 ?? ""}",
-      colors: [
-        AppColors.studio,
-        AppColors.paleSlate,
-      ],
-      style: TextStyle(
-          fontSize: size.width * 0.040,
-          fontFamily: 'Poppins',
-          fontWeight: FontWeight.bold),
-    );
-    
   }
 }
 

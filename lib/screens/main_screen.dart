@@ -3,8 +3,8 @@ import 'package:my_portfolio/screens/large_screen/desktop_layout_screen.dart';
 import 'package:my_portfolio/screens/mobile/mobile_layout_screen.dart';
 import 'package:my_portfolio/screens/tablet/tablet_layout_screen.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

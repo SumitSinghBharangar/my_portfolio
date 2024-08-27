@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:my_portfolio/constants/colors.dart';
+
 import 'package:my_portfolio/constants/styles.dart';
+import 'package:my_portfolio/screens/widgets/avatar_img_widget.dart';
 
 import '../widgets/header_text_widget.dart';
+import '../widgets/navbar_widget.dart';
 import '../widgets/rotating_image_container.dart';
 
 class DesktopLayoutScreen extends StatefulWidget {
@@ -27,39 +27,49 @@ class _DesktopLayoutScreenState extends State<DesktopLayoutScreen> {
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.symmetric(vertical: size.height * 0.18),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                margin: EdgeInsets.symmetric(
+                  vertical: size.height * 0,
+                ),
+                child: Column(
                   children: [
-                    Column(
+                    NavbarWidgetLarge(
+                      size: size,
+                    ),
+                    Row(
                       mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Row(
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
                           children: [
-                            HeaderTextWidget(
-                              size: size,
+                            Row(
+                              children: [
+                                HeaderTextWidget(
+                                  size: size,
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                //
+                              ],
                             ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            //
+                            Social_Large(size: size)
                           ],
                         ),
-                        Social_Large(size: size)
+                        Expanded(
+                            child: Container(
+                          height: size.height * 0.75,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              // RotatingImageContainer(),
+                              AvatarImgWidget()
+                            ],
+                          ),
+                        ))
                       ],
                     ),
-                    Expanded(
-                        child: Container(
-                      height: size.height * 0.75,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          RotatingImageContainer(),
-                        ],
-                      ),
-                    ))
                   ],
                 ),
               )
