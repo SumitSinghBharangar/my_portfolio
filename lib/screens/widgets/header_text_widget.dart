@@ -90,7 +90,7 @@ class GradientTextWidget extends StatelessWidget {
           fontFamily: 'Poppins',
           fontWeight: FontWeight.bold),
     );
-    );
+    
   }
 }
 
