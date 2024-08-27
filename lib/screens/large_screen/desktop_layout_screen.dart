@@ -44,9 +44,10 @@ class _DesktopLayoutScreenState extends State<DesktopLayoutScreen> {
                             SizedBox(
                               height: 20,
                             ),
-                            // Social_Large(size: size)
+                            //
                           ],
-                        )
+                        ),
+                        Social_Large(size: size)
                       ],
                     ),
                     Expanded(
