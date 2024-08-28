@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/screens/widgets/navbar_widget.dart';
 
 import '../../constants/styles.dart';
 
@@ -21,9 +20,7 @@ class _TabletLayoutScreenState extends State<TabletLayoutScreen> {
         decoration: Styles.gradientDecoration,
         child: SingleChildScrollView(
           child: Column(
-            children: [
-              NavbarWidgetLarge(size: size),
-            ],
+            children: [],
           ),
         ),
       ),

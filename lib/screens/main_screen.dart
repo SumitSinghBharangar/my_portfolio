@@ -8,14 +8,13 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context,constraints){
-      if(constraints.minWidth > 950){
-        return const DesktopLayoutScreen();
-      }
-      else if(constraints.minWidth > 600){
+    final List<Widget> tabs = [MobileLayoutScreen(), TabletLayoutScreen()];
+    return LayoutBuilder(builder: (context, constraints) {
+      if (constraints.minWidth > 950) {
+        return DesktopLayoutScreen(list: tabs);
+      } else if (constraints.minWidth > 600) {
         return const TabletLayoutScreen();
-      }
-      else{
+      } else {
         return const MobileLayoutScreen();
       }
     });

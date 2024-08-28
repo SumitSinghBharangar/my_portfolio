@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/screens/widgets/navbar_widget.dart';
+
 
 import '../../constants/styles.dart';
 
