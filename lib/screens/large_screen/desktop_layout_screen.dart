@@ -1,10 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 import 'package:my_portfolio/constants/styles.dart';
-import 'package:my_portfolio/screens/widgets/avatar_img_widget.dart';
-
-import '../widgets/header_text_widget.dart';
+import 'package:my_portfolio/screens/navbar_screens.dart/home_screen.dart';
+import 'package:my_portfolio/screens/widgets/navwidget.dart';
 
 class DesktopLayoutScreen extends StatefulWidget {
   final List<Widget> list;
@@ -18,88 +17,64 @@ class DesktopLayoutScreen extends StatefulWidget {
 }
 
 class _DesktopLayoutScreenState extends State<DesktopLayoutScreen> {
+  int _selected = 0;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return DefaultTabController(
-      length: widget.list.length,
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          bottom: TabBar(tabs: [
-            Tab(
-              icon: Icon(Iconsax.home),
-              text: "Home",
+    final List<Widget> screens = [HomeScreen(size: size)];
+    return Scaffold(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: Styles.gradientDecoration,
+        child: SingleChildScrollView(
+          child: Container(
+            margin: EdgeInsets.symmetric(
+              vertical: size.height * 0,
             ),
-            Tab(
-              icon: Icon(Iconsax.personalcard),
-              text: "About",
-            ),
-            // Tab(
-            //   icon: Icon(Iconsax.profile),
-            //   text: "Skills",
-            // ),
-            // Tab(
-            //   icon: Icon(Iconsax.tag),
-            //   text: "Projects",
-            // ),
-            // Tab(
-            //   icon: Icon(Iconsax.info_circle),
-            //   text: "Contact",
-            // ),
-          ]),
-        ),
-        body: Container(
-          height: double.infinity,
-          width: double.infinity,
-          decoration: Styles.gradientDecoration,
-          child: SingleChildScrollView(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: [
-                Container(
-                  margin: EdgeInsets.symmetric(
-                    vertical: size.height * 0,
-                  ),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Row(
-                                children: [
-                                  HeaderTextWidget(
-                                    size: size,
-                                  ),
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  //
-                                ],
-                              ),
-                              Social_Large(size: size)
-                            ],
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    SizedBox(
+                      height: size.height * 0.08,
+                      child: Center(
+                        child: CupertinoButton(
+                          padding: const EdgeInsets.symmetric(vertical: 8),
+                          onPressed: () {},
+                          child: Text(
+                            "Sumit singh </>",
+                            style: TextStyle(
+                                fontSize: size.width * 0.022,
+                                color: Colors.white),
                           ),
-                          Expanded(
-                              child: Container(
-                            height: size.height * 0.75,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                // RotatingImageContainer(),
-                                AvatarImgWidget()
-                              ],
-                            ),
-                          ))
-                        ],
+                        ),
                       ),
-                    ],
-                  ),
-                )
+                    ),
+                    NavBarWidget(
+                      size: size / 2,
+                      list: [
+                        "Home",
+                        "About",
+                        "Skills",
+                        "Projects",
+                        "Contact  "
+                      ],
+                      currentIndex: _selected,
+                      onItemTap: (index) {
+                        setState(() {
+                          _selected = index;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+                screens[_selected]
               ],
             ),
           ),
