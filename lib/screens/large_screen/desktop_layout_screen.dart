@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:my_portfolio/constants/styles.dart';
+import 'package:my_portfolio/screens/navbar_screens.dart/about_screen.dart';
 import 'package:my_portfolio/screens/navbar_screens.dart/home_screen.dart';
-import 'package:my_portfolio/screens/widgets/navwidget.dart';
+import 'package:my_portfolio/screens/widgets/navbar_widget.dart';
 
 class DesktopLayoutScreen extends StatefulWidget {
   final List<Widget> list;
@@ -21,7 +22,10 @@ class _DesktopLayoutScreenState extends State<DesktopLayoutScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    final List<Widget> screens = [HomeScreen(size: size)];
+    final List<Widget> screens = [
+      HomeScreen(size: size),
+      AboutScreen(size: size)
+    ];
     return Scaffold(
       body: Container(
         height: double.infinity,
