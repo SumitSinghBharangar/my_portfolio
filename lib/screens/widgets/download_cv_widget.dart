@@ -14,12 +14,10 @@ class DownloadCvWidget extends StatelessWidget {
       child: Container(
         height: 50,
         width: 250,
-      
         decoration: BoxDecoration(
-          
             color: Colors.transparent,
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: AppColors.studio)),
+            border: Border.all(color: AppColors.paleSlate)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

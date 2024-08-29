@@ -25,7 +25,7 @@ class SocialWidget extends StatelessWidget {
               color: Colors.transparent,
               shape: BoxShape.circle,
               border: Border.all(
-                color: AppColors.studio.withOpacity(0.5),
+                color: AppColors.paleSlate.withOpacity(0.5),
               ),
             ),
             child: Center(
@@ -54,7 +54,7 @@ class SocialWidget extends StatelessWidget {
               color: Colors.transparent,
               shape: BoxShape.circle,
               border: Border.all(
-                color: AppColors.studio.withOpacity(0.5),
+                color: AppColors.paleSlate.withOpacity(0.5),
               ),
             ),
             child: Center(
@@ -80,7 +80,7 @@ class SocialWidget extends StatelessWidget {
               color: Colors.transparent,
               shape: BoxShape.circle,
               border: Border.all(
-                color: AppColors.studio.withOpacity(0.5),
+                color: AppColors.paleSlate.withOpacity(0.5),
               ),
             ),
             child: Center(

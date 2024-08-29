@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/constants/styles.dart';
 
 import '../widgets/avatar_img_widget.dart';
 import '../widgets/header_text_widget.dart';
@@ -10,42 +11,53 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: size.width * 0.07),
-      child: Column(
-        children: [
-          Row(
+      height: double.infinity,
+      width: double.infinity,
+      decoration: Styles.gradientDecoration,
+      child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Container(
+          margin: EdgeInsets.symmetric(
+              horizontal: size.width * 0.07, vertical: size.height * 0.02),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Column(
+              Row(
                 mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Row(
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      HeaderTextWidget(
-                        size: size,
+                      Row(
+                        children: [
+                          HeaderTextWidget(
+                            size: size,
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          //
+                        ],
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      //
                     ],
                   ),
-                  Social_Large(size: size)
+                  Expanded(
+                      child: Container(
+                    height: size.height * 0.7,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [AvatarImgWidget()],
+                    ),
+                  ))
                 ],
               ),
-              Expanded(
-                  child: Container(
-                height: size.height * 0.7,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [AvatarImgWidget()],
-                ),
-              ))
+              Social_Large(size: size)
             ],
-          )
-        ],
+          ),
+        ),
       ),
     );
   }

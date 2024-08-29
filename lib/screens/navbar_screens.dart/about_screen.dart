@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/constants/styles.dart';
 import 'package:my_portfolio/screens/widgets/interest_widget.dart';
 
-
 import 'package:my_portfolio/screens/widgets/intro_text_widget.dart';
+import 'package:my_portfolio/screens/widgets/profile_widget.dart';
 import 'package:my_portfolio/screens/widgets/rotating_image_container.dart';
 
 class AboutScreen extends StatelessWidget {
@@ -17,39 +18,43 @@ class AboutScreen extends StatelessWidget {
     return Container(
       width: size.width,
       height: size.height,
-      margin: EdgeInsets.symmetric(horizontal: size.width * 0.07),
+      decoration: Styles.gradientDecoration,
       child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(
-              "ABOUT___________",
-              style: TextStyle(
-                  fontSize: size.width * 0.012,
-                  color: Colors.white,
-                  fontFamily: "Poppins"),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                IntroTextWidget(size: size),
-                Spacer(),
-                RotatingImageContainer(),
-              ],
-            ),
-            Text(
-              "INTERESTS___________",
-              style: TextStyle(
-                  fontSize: size.width * 0.012,
-                  color: Colors.white,
-                  fontFamily: "Poppins"),
-            ),
-            InterestWidget(list: ["App Develpment","Software Developer","Web Scraping"])
-            // BoxWidget(list: ["web development", "app developer"], size: size),
-          ],
+        physics: const BouncingScrollPhysics(),
+        child: Container(
+          margin: EdgeInsets.symmetric(
+              horizontal: size.width * 0.07, vertical: size.height * 0.02),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                "ABOUT___________",
+                style: TextStyle(
+                    fontSize: size.width * 0.012,
+                    color: Colors.white,
+                    fontFamily: "Poppins"),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  IntroTextWidget(size: size),
+                  Spacer(),
+                  ProfileWidget(size: size)
+                ],
+              ),
+              Text(
+                "INTERESTS___________",
+                style: TextStyle(
+                    fontSize: size.width * 0.012,
+                    color: Colors.white,
+                    fontFamily: "Poppins"),
+              ),
+              InterestWidget(list: ["app", "web", "android", "ios"], size: size)
+            ],
+          ),
         ),
       ),
     );

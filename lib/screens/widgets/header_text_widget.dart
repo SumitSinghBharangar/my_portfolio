@@ -39,7 +39,6 @@ class HeaderTextWidget extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          
         ],
       ),
     );
@@ -57,7 +56,7 @@ class Social_Large extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
-      width: size.width * 0.5,
+      // width: size.width * 0.5,
       child: Row(
         children: [
           DownloadCvWidget(),
