@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/constants/components/box_widget.dart';
-import 'package:my_portfolio/screens/widgets/header_text_widget.dart';
+import 'package:my_portfolio/screens/widgets/interest_widget.dart';
+
+
+import 'package:my_portfolio/screens/widgets/intro_text_widget.dart';
 import 'package:my_portfolio/screens/widgets/rotating_image_container.dart';
 
 class AboutScreen extends StatelessWidget {
@@ -14,7 +16,7 @@ class AboutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: size.width,
-      height: double.infinity,
+      height: size.height,
       margin: EdgeInsets.symmetric(horizontal: size.width * 0.07),
       child: SingleChildScrollView(
         child: Column(
@@ -33,7 +35,7 @@ class AboutScreen extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                HeaderTextWidget(size: size),
+                IntroTextWidget(size: size),
                 Spacer(),
                 RotatingImageContainer(),
               ],
@@ -45,7 +47,8 @@ class AboutScreen extends StatelessWidget {
                   color: Colors.white,
                   fontFamily: "Poppins"),
             ),
-            BoxWidget(list: ["web development", "app developer"], size: size),
+            InterestWidget(list: ["App Develpment","Software Developer","Web Scraping"])
+            // BoxWidget(list: ["web development", "app developer"], size: size),
           ],
         ),
       ),
