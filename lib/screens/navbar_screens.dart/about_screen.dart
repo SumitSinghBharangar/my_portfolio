@@ -4,7 +4,6 @@ import 'package:my_portfolio/screens/widgets/interest_widget.dart';
 
 import 'package:my_portfolio/screens/widgets/intro_text_widget.dart';
 import 'package:my_portfolio/screens/widgets/profile_widget.dart';
-import 'package:my_portfolio/screens/widgets/rotating_image_container.dart';
 
 class AboutScreen extends StatelessWidget {
   final Size size;
@@ -28,6 +27,9 @@ class AboutScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 20,
+              ),
               Text(
                 "ABOUT___________",
                 style: TextStyle(
@@ -52,7 +54,12 @@ class AboutScreen extends StatelessWidget {
                     color: Colors.white,
                     fontFamily: "Poppins"),
               ),
-              InterestWidget(list: ["app", "web", "android", "ios"], size: size)
+              SizedBox(
+                height: 20,
+              ),
+              InterestWidget(
+                  list: ["app development", "web", "android", "ios"],
+                  size: size),
             ],
           ),
         ),
