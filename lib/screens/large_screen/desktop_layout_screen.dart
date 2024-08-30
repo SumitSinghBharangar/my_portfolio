@@ -4,6 +4,7 @@ import 'package:my_portfolio/constants/colors.dart';
 
 import 'package:my_portfolio/screens/navbar_screens.dart/about_screen.dart';
 import 'package:my_portfolio/screens/navbar_screens.dart/home_screen.dart';
+import 'package:my_portfolio/screens/navbar_screens.dart/skill_screen.dart';
 import 'package:my_portfolio/screens/widgets/navbar_widget.dart';
 
 class DesktopLayoutScreen extends StatefulWidget {
@@ -22,7 +23,10 @@ class _DesktopLayoutScreenState extends State<DesktopLayoutScreen> {
     Size size = MediaQuery.of(context).size;
     final List<Widget> screens = [
       HomeScreen(size: size),
-      AboutScreen(size: size)
+      AboutScreen(size: size),
+      SkillScreen(size: size),
+      SkillScreen(size: size),
+      SkillScreen(size: size),
     ];
     return Scaffold(
         appBar: AppBar(

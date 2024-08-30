@@ -11,7 +11,7 @@ class MainScreen extends StatelessWidget {
     // final List<Widget> tabs = [MobileLayoutScreen(), TabletLayoutScreen()];
     return LayoutBuilder(builder: (context, constraints) {
       if (constraints.minWidth > 950) {
-        return DesktopLayoutScreen();
+        return const DesktopLayoutScreen();
       } else if (constraints.minWidth > 600) {
         return const TabletLayoutScreen();
       } else {
