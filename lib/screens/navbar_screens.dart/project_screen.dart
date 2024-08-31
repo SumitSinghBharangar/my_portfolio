@@ -12,7 +12,7 @@ class ProjectScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     List<MyProjectItem> list = [
       MyProjectItem()
-    ]
+    ];
     Size size = MediaQuery.of(context).size;
     return Container(
       height: double.infinity,
@@ -21,7 +21,19 @@ class ProjectScreen extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.symmetric(
             horizontal: size.width * 0.07, vertical: size.height * 0.03),
-          child: ResponsiveLayout(builder: (context,index){
+          child: ResponsiveLayout(
+            mobileCrossAxisCount: 1,
+            mobileRatio: 0.4,
+            largeMobileRatio: .4,
+            largeMobileCrossAxisCount: 1,
+            tabletCrossAxisCount: 2,
+            largeTabletCrossAxisCount: 2,
+            largeTabletRatio: .4,
+            tabletRatio: 0.4,
+            desktopScreenCrossAxisCount: 2,
+            desktopRatio: 0.4,
+            builder: (context,index){
+            
             return Bounce(
               child: Container(
                 height: 140,
