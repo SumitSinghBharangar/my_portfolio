@@ -11,7 +11,7 @@ class ProjectScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<MyProjectItem> list = [
-      MyProjectItem()
+      MyProjectItem(imageAddress: "assets/images/shot-01",imageName: "Face Detector App"),
     ];
     Size size = MediaQuery.of(context).size;
     return Container(
@@ -33,6 +33,8 @@ class ProjectScreen extends StatelessWidget {
             desktopScreenCrossAxisCount: 2,
             desktopRatio: 0.4,
             builder: (context,index){
+            String assetAddress = list[index].imageAddress.toString();
+            String assetName = list[index].imageName.toString();
             
             return Bounce(
               child: Container(
@@ -42,7 +44,7 @@ class ProjectScreen extends StatelessWidget {
                   color: Colors.transparent.withOpacity(0.3),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(color: AppColors.studio,width: 1.4),
-                  image: DecorationImage(image: AssetImage("assetName"))
+                  image: DecorationImage(image: AssetImage(assetAddress))
                 ),
                 
               ),
@@ -58,7 +60,7 @@ class MyProjectItem {
   String? imageAddress;
 
   MyProjectItem({
-    this.imageName,
-    this.imageAddress,
+    required this.imageName,
+    required this.imageAddress,
   });
 }
