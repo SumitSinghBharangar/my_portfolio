@@ -43,6 +43,7 @@ class SkillScreen extends StatelessWidget {
         margin: EdgeInsets.symmetric(
             horizontal: size.width * 0.07, vertical: size.height * 0.03),
         child: ResponsiveLayout(
+            physics: const BouncingScrollPhysics(),
             mobileCrossAxisCount: 3,
             mobileRatio: 1.1,
             largeMobileRatio: 2,

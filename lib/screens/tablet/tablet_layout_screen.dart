@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/colors.dart';
-import '../../constants/styles.dart';
 import '../navbar_screens.dart/about_screen.dart';
 import '../navbar_screens.dart/home_screen.dart';
 import '../widgets/navbar_widget.dart';
@@ -42,7 +41,7 @@ class _TabletLayoutScreenState extends State<TabletLayoutScreen> {
               children: [
                 NavBarWidget(
                   size: size / 2,
-                  list: ["Home", "About", "Skills", "Projects", "Contact  "],
+                  list: const ["Home", "About", "Skills", "Projects", "Contact  "],
                   currentIndex: _selected,
                   onItemTap: (index) {
                     setState(() {

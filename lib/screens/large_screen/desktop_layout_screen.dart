@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/colors.dart';
 
 import 'package:my_portfolio/screens/navbar_screens.dart/about_screen.dart';
+import 'package:my_portfolio/screens/navbar_screens.dart/contact_screen.dart';
 import 'package:my_portfolio/screens/navbar_screens.dart/home_screen.dart';
 import 'package:my_portfolio/screens/navbar_screens.dart/project_screen.dart';
 import 'package:my_portfolio/screens/navbar_screens.dart/skill_screen.dart';
@@ -27,7 +28,7 @@ class _DesktopLayoutScreenState extends State<DesktopLayoutScreen> {
       AboutScreen(size: size),
       SkillScreen(size: size),
       ProjectScreen(size: size),
-      SkillScreen(size: size),
+      ContactScreen(size: size),
     ];
     return Scaffold(
         appBar: AppBar(

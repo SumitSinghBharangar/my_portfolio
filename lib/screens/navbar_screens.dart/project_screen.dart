@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:layout_pro/responsive_layout.dart';
 import 'package:my_portfolio/constants/colors.dart';
@@ -45,6 +44,8 @@ class ProjectScreen extends StatelessWidget {
         margin: EdgeInsets.symmetric(
             horizontal: size.width * 0.07, vertical: size.height * 0.03),
         child: ResponsiveLayout(
+            physics: const BouncingScrollPhysics(
+                decelerationRate: ScrollDecelerationRate.normal),
             mobileCrossAxisCount: 1,
             mobileRatio: 0.4,
             largeMobileRatio: .4,

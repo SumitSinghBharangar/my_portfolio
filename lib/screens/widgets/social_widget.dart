@@ -14,9 +14,9 @@ class SocialWidget extends StatelessWidget {
       children: [
         Bounce(
           onTap: () {
-            // launchUrl(
-            //   Uri.parse("https://github.com/SumitSinghBharangar"),
-            // );
+            launchUrl(
+              Uri.parse("https://github.com/SumitSinghBharangar"),
+            );
           },
           child: Container(
             height: 40,

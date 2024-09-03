@@ -1,11 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/screens/widgets/download_cv_widget.dart';
 import 'package:my_portfolio/screens/widgets/social_widget.dart';
-import 'package:simple_gradient_text/simple_gradient_text.dart';
-
-import 'social_section.dart';
 
 class HeaderTextWidget extends StatelessWidget {
   final Size size;
