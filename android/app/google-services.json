@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "950080662234",
+    "project_id": "life-sync-5a353",
+    "storage_bucket": "life-sync-5a353.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950080662234:android:a077ab69b506fe58a2d3e3",
+        "android_client_info": {
+          "package_name": "com.example.life_sync"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUmk_LSUniZdqB0e3ej6QGF7A68R5Z26M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950080662234:android:9e3729528432ce87a2d3e3",
+        "android_client_info": {
+          "package_name": "com.example.my_portfolio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUmk_LSUniZdqB0e3ej6QGF7A68R5Z26M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

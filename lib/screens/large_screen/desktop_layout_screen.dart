@@ -4,6 +4,7 @@ import 'package:my_portfolio/constants/colors.dart';
 
 import 'package:my_portfolio/screens/navbar_screens.dart/about_screen.dart';
 import 'package:my_portfolio/screens/navbar_screens.dart/home_screen.dart';
+import 'package:my_portfolio/screens/navbar_screens.dart/project_screen.dart';
 import 'package:my_portfolio/screens/navbar_screens.dart/skill_screen.dart';
 import 'package:my_portfolio/screens/widgets/navbar_widget.dart';
 
@@ -25,7 +26,7 @@ class _DesktopLayoutScreenState extends State<DesktopLayoutScreen> {
       HomeScreen(size: size),
       AboutScreen(size: size),
       SkillScreen(size: size),
-      SkillScreen(size: size),
+      ProjectScreen(size: size),
       SkillScreen(size: size),
     ];
     return Scaffold(
