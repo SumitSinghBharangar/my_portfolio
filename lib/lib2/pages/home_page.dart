@@ -22,25 +22,7 @@ class _HomePageState extends State<HomePage> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         key: scaffoldkey,
-        endDrawer: Drawer(
-          backgroundColor: AppColors.capeCod,
-          child: ListView(
-            children: [
-              for (int i = 0; i < navIcons.length; i++)
-                ListTile(
-                  contentPadding: EdgeInsets.symmetric(horizontal: 20),
-                  leading: Icon(
-                    navIcons[i],
-                    color: Colors.white,
-                  ),
-                  title: Text(
-                    navItems[i],
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-            ],
-          ),
-        ),
+        endDrawer: 
         body: Container(
           height: double.infinity,
           width: double.infinity,
