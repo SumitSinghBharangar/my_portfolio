@@ -26,18 +26,20 @@ class DesktopHeader extends StatelessWidget {
       ),
       child: Row(
         children: [
-          SiteLogo(onTap: (){
-            
-          },),
+          SiteLogo(
+            size: size,
+            onTap: () {},
+          ),
           Spacer(),
           for (int i = 0; i < navItems.length; i++)
             Padding(
-              padding: const EdgeInsets.only(right: 20),
+              padding: const EdgeInsets.only(right: 10),
               child: CupertinoButton(
                   onPressed: () {},
                   child: Text(
                     navItems[i],
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(
+                        color: Colors.white, fontSize: size.width * 0.018),
                   )),
             ),
         ],

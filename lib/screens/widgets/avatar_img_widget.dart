@@ -10,14 +10,14 @@ class AvatarImgWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.44,
-      width: size.width * 0.44,
+      height: size.height * 0.43,
+      width: size.width * 0.43,
       decoration: BoxDecoration(
         image: const DecorationImage(
-          fit: BoxFit.fitHeight,
+          // fit: BoxFit.fitHeight,
           image: AssetImage("assets/images/favicon.png"),
         ),
-        color: Colors.transparent.withOpacity(0.7),
+        color: Colors.transparent.withOpacity(0.6),
         shape: BoxShape.circle,
         border: Border.all(
           color: AppColors.studio.withOpacity(0.5),

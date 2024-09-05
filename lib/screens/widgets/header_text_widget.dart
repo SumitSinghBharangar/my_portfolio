@@ -12,12 +12,13 @@ class HeaderTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: size.height * 0.1),
+      width: size.width * 0.47,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "I am Sumit",
+            "I'm Sumit",
             style: TextStyle(
                 fontSize: size.width * 0.05,
                 color: Colors.white,
@@ -31,7 +32,7 @@ class HeaderTextWidget extends StatelessWidget {
             "App Developer +\nAndroid & ios developer",
             colors: [AppColors.studio, AppColors.paleSlate],
             style: TextStyle(
-              fontSize: size.width * 0.040,
+              fontSize: size.width * 0.037,
               fontFamily: "Poppins",
               fontWeight: FontWeight.bold,
             ),

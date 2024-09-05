@@ -4,12 +4,14 @@ import 'package:my_portfolio/lib2/widgets/site_logo.dart';
 import '../../constants/colors.dart';
 
 class HeaderMobile extends StatelessWidget {
+  final Size size;
   final VoidCallback? onLogoTap;
   final VoidCallback? onMenuTap;
   const HeaderMobile({
     super.key,
     this.onLogoTap,
     this.onMenuTap,
+    required this.size,
   });
 
   @override
@@ -28,6 +30,7 @@ class HeaderMobile extends StatelessWidget {
       child: Row(
         children: [
           SiteLogo(
+            size: size,
             onTap: onLogoTap,
           ),
           Spacer(),
