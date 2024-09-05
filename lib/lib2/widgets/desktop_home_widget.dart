@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/screens/widgets/avatar_img_widget.dart';
-import 'package:my_portfolio/screens/widgets/header_text_widget.dart';
+
+import '../../screens/widgets/avatar_img_widget.dart';
+import '../../screens/widgets/download_cv_widget.dart';
+import '../../screens/widgets/header_text_widget.dart';
+import '../../screens/widgets/social_widget.dart';
 
 class DesktopHomeWidget extends StatelessWidget {
   final Size size;
@@ -11,14 +14,30 @@ class DesktopHomeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: size.width * 0.05),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          HeaderTextWidget(size: size),
-          const AvatarImgWidget(),
-        ],
+    return Padding(
+      padding: EdgeInsets.only(left: size.width * 0.06),
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [HeaderTextWidget(size: size), AvatarImgWidget()],
+            ),
+            SizedBox(
+              height: size.height * 0.01,
+            ),
+            Row(
+              children: [
+                DownloadCvWidget(),
+                SizedBox(
+                  width: size.width * 0.02,
+                ),
+                SocialWidget(),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

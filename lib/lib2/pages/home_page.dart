@@ -3,9 +3,14 @@ import 'package:my_portfolio/constants/styles.dart';
 import 'package:my_portfolio/lib2/constants/size.dart';
 import 'package:my_portfolio/lib2/widgets/desktop_header.dart';
 import 'package:my_portfolio/lib2/widgets/desktop_home_widget.dart';
+
 import 'package:my_portfolio/lib2/widgets/drawer_mobile.dart';
 import 'package:my_portfolio/lib2/widgets/header_mobile.dart';
+import 'package:my_portfolio/lib2/widgets/mobile_home_widget.dart';
+import 'package:my_portfolio/screens/widgets/avatar_img_widget.dart';
+import 'package:my_portfolio/screens/widgets/download_cv_widget.dart';
 import 'package:my_portfolio/screens/widgets/header_text_widget.dart';
+import 'package:my_portfolio/screens/widgets/social_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -43,11 +48,18 @@ class _HomePageState extends State<HomePage> {
                       scaffoldkey.currentState?.openEndDrawer();
                     },
                   ),
-                SizedBox(
-                  height: 30,
-                ),
-                // HeaderTextWidget(size: size),
-                DesktopHomeWidget(size: size),
+                // SizedBox(
+                //   height: 30,
+                // ),
+                if (constraints.maxWidth >= kMinDesktopWidth)
+                  DesktopHomeWidget(size: size)
+                else
+                  MobileHomePage(size: size),
+
+                // if (constraints.maxWidth >= kMinDesktopWidth)
+                //   DesktopHomeWidget(size: size)
+                // else
+                //   MobileHomeWidget(size: size * 2),
 
                 // Container(
                 //   child: Row(

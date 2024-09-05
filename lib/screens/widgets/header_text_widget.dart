@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:my_portfolio/screens/widgets/social_section.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/screens/widgets/download_cv_widget.dart';
@@ -11,7 +13,7 @@ class HeaderTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: size.height * 0.1),
+      margin: EdgeInsets.only(top: size.height * .01),
       width: size.width * 0.47,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -26,7 +28,7 @@ class HeaderTextWidget extends StatelessWidget {
                 fontFamily: "Poppins"),
           ),
           SizedBox(
-            height: size.height * 0.05,
+            height: size.height * 0.02,
           ),
           GradientText(
             "App Developer +\nAndroid & ios developer",
@@ -36,6 +38,9 @@ class HeaderTextWidget extends StatelessWidget {
               fontFamily: "Poppins",
               fontWeight: FontWeight.bold,
             ),
+          ),
+          SizedBox(
+            height: size.height * 0.05,
           ),
         ],
       ),
