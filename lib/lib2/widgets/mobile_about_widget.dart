@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../../screens/widgets/intro_text_widget.dart';
 import '../../screens/widgets/profile_widget.dart';
 
-class DesktopAboutWidget extends StatelessWidget {
+class MobileAboutWidget extends StatelessWidget {
   final Size size;
-  const DesktopAboutWidget({
+  const MobileAboutWidget({
     super.key,
     required this.size,
   });
@@ -14,11 +14,11 @@ class DesktopAboutWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: size.width * 0.06),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
           ProfileWidget(size: size),
-          const Spacer(),
           IntroTextWidget(size: size),
         ],
       ),

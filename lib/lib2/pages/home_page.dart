@@ -7,6 +7,7 @@ import 'package:my_portfolio/lib2/widgets/desktop_home_widget.dart';
 
 import 'package:my_portfolio/lib2/widgets/drawer_mobile.dart';
 import 'package:my_portfolio/lib2/widgets/header_mobile.dart';
+import 'package:my_portfolio/lib2/widgets/mobile_about_widget.dart';
 import 'package:my_portfolio/lib2/widgets/mobile_home_widget.dart';
 import 'package:my_portfolio/screens/widgets/avatar_img_widget.dart';
 import 'package:my_portfolio/screens/widgets/download_cv_widget.dart';
@@ -70,7 +71,11 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyle(color: Colors.white, fontSize: 26),
                   ),
                 ),
-                // DesktopAboutWidget(size: size),
+
+                if (constraints.maxWidth >= 600)
+                  DesktopAboutWidget(size: size)
+                else
+                  MobileAboutWidget(size: size * 2),
 
                 // about
                 Container(
