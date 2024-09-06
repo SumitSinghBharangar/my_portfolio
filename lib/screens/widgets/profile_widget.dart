@@ -9,7 +9,7 @@ class ProfileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: size.height * 0.50,
+      height: size.width * 0.24,
       width: size.width * 0.24,
       decoration: BoxDecoration(
           image: DecorationImage(

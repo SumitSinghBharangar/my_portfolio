@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/styles.dart';
 import 'package:my_portfolio/lib2/constants/size.dart';
+import 'package:my_portfolio/lib2/widgets/desktop_about_widget.dart';
 import 'package:my_portfolio/lib2/widgets/desktop_header.dart';
 import 'package:my_portfolio/lib2/widgets/desktop_home_widget.dart';
 
@@ -10,6 +11,8 @@ import 'package:my_portfolio/lib2/widgets/mobile_home_widget.dart';
 import 'package:my_portfolio/screens/widgets/avatar_img_widget.dart';
 import 'package:my_portfolio/screens/widgets/download_cv_widget.dart';
 import 'package:my_portfolio/screens/widgets/header_text_widget.dart';
+import 'package:my_portfolio/screens/widgets/intro_text_widget.dart';
+import 'package:my_portfolio/screens/widgets/profile_widget.dart';
 import 'package:my_portfolio/screens/widgets/social_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -56,21 +59,18 @@ class _HomePageState extends State<HomePage> {
                 else
                   MobileHomePage(size: size),
 
-                // if (constraints.maxWidth >= kMinDesktopWidth)
-                //   DesktopHomeWidget(size: size)
-                // else
-                //   MobileHomeWidget(size: size * 2),
+                SizedBox(
+                  height: size.height * 0.05,
+                ),
 
-                // Container(
-                //   child: Row(
-                //     children: [
-                //       Text(
-                //         "Hi, \nI'm Sumit Singh \nA Flutter Developer",
-                //         style: TextStyle(color: Colors.white),
-                //       )
-                //     ],
-                //   ),
-                // ),
+                Padding(
+                  padding: EdgeInsets.only(left: size.width * 0.06),
+                  child: const Text(
+                    "About. . .",
+                    style: TextStyle(color: Colors.white, fontSize: 26),
+                  ),
+                ),
+                // DesktopAboutWidget(size: size),
 
                 // about
                 Container(
