@@ -9,6 +9,7 @@ import 'package:my_portfolio/lib2/widgets/drawer_mobile.dart';
 import 'package:my_portfolio/lib2/widgets/header_mobile.dart';
 import 'package:my_portfolio/lib2/widgets/mobile_about_widget.dart';
 import 'package:my_portfolio/lib2/widgets/mobile_home_widget.dart';
+import 'package:my_portfolio/screens/navbar_screens.dart/skill_screen.dart';
 import 'package:my_portfolio/screens/widgets/avatar_img_widget.dart';
 import 'package:my_portfolio/screens/widgets/download_cv_widget.dart';
 import 'package:my_portfolio/screens/widgets/header_text_widget.dart';
@@ -76,6 +77,10 @@ class _HomePageState extends State<HomePage> {
                   DesktopAboutWidget(size: size)
                 else
                   MobileAboutWidget(size: size * 2),
+
+                // Expanded(
+                //   child: SkillScreen(size: size),
+                // ),
 
                 // about
                 Container(
