@@ -14,12 +14,22 @@ class DesktopAboutWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: size.width * 0.06),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
+      child: Column(
         children: [
-          ProfileWidget(size: size),
-          const Spacer(),
-          IntroTextWidget(size: size),
+          const SizedBox(
+            height: 30,
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ProfileWidget(size: size),
+              const Spacer(),
+              IntroTextWidget(size: size),
+            ],
+          ),
+          const SizedBox(
+            height: 30,
+          ),
         ],
       ),
     );

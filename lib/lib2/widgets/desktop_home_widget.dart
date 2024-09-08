@@ -16,28 +16,32 @@ class DesktopHomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(left: size.width * 0.06),
-      child: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [HeaderTextWidget(size: size), AvatarImgWidget()],
-            ),
-            SizedBox(
-              height: size.height * 0.01,
-            ),
-            Row(
-              children: [
-                DownloadCvWidget(),
-                SizedBox(
-                  width: size.width * 0.02,
-                ),
-                SocialWidget(),
-              ],
-            )
-          ],
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(
+            height: 50,
+          ),
+          Row(
+            children: [HeaderTextWidget(size: size), const AvatarImgWidget()],
+          ),
+          const SizedBox(
+            height: 40,
+          ),
+          Row(
+            children: [
+              const DownloadCvWidget(),
+              SizedBox(
+                width: size.width * 0.02,
+              ),
+              const SocialWidget(),
+            ],
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+        ],
       ),
     );
   }

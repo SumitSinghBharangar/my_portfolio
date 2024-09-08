@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:my_portfolio/constants/styles.dart';
+
 import 'package:my_portfolio/lib2/constants/size.dart';
 import 'package:my_portfolio/lib2/widgets/desktop_about_widget.dart';
 import 'package:my_portfolio/lib2/widgets/desktop_header.dart';
@@ -9,13 +11,8 @@ import 'package:my_portfolio/lib2/widgets/drawer_mobile.dart';
 import 'package:my_portfolio/lib2/widgets/header_mobile.dart';
 import 'package:my_portfolio/lib2/widgets/mobile_about_widget.dart';
 import 'package:my_portfolio/lib2/widgets/mobile_home_widget.dart';
-import 'package:my_portfolio/screens/navbar_screens.dart/skill_screen.dart';
-import 'package:my_portfolio/screens/widgets/avatar_img_widget.dart';
-import 'package:my_portfolio/screens/widgets/download_cv_widget.dart';
-import 'package:my_portfolio/screens/widgets/header_text_widget.dart';
-import 'package:my_portfolio/screens/widgets/intro_text_widget.dart';
-import 'package:my_portfolio/screens/widgets/profile_widget.dart';
-import 'package:my_portfolio/screens/widgets/social_widget.dart';
+import 'package:my_portfolio/lib2/widgets/project_widget.dart';
+import 'package:my_portfolio/lib2/widgets/skills_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -53,9 +50,7 @@ class _HomePageState extends State<HomePage> {
                       scaffoldkey.currentState?.openEndDrawer();
                     },
                   ),
-                // SizedBox(
-                //   height: 30,
-                // ),
+
                 if (constraints.maxWidth >= kMinDesktopWidth)
                   DesktopHomeWidget(size: size)
                 else
@@ -73,33 +68,57 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
 
+                // about
+
                 if (constraints.maxWidth >= 600)
                   DesktopAboutWidget(size: size)
                 else
                   MobileAboutWidget(size: size * 2),
 
-                // Expanded(
-                //   child: SkillScreen(size: size),
-                // ),
+                // skills
+                const SizedBox(
+                  height: 30,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.06),
+                  child: const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Skills...",
+                        style: TextStyle(fontSize: 26, color: Colors.white),
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      SkillsWidget(),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
 
-                // about
-                Container(
-                  height: 500,
-                  width: double.maxFinite,
-                  decoration: Styles.gradientDecoration,
-                ),
-                //  skill
-                Container(
-                  height: 500,
-                  width: double.maxFinite,
-                  decoration: Styles.gradientDecoration,
-                ),
                 // projects
-                Container(
-                  height: 500,
-                  width: double.maxFinite,
-                  decoration: Styles.gradientDecoration,
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: size.width * 0.06),
+                  child: const Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Projects...",
+                        style: TextStyle(fontSize: 26, color: Colors.white),
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      ProjectWidget(),
+                    ],
+                  ),
                 ),
+
                 //  contact
                 Container(
                   height: 500,
