@@ -121,7 +121,6 @@ class _HomePageState extends State<HomePage> {
 
                 //  contact
                 Container(
-                  height: 500,
                   width: double.maxFinite,
                   decoration: Styles.gradientDecoration,
                 ),
