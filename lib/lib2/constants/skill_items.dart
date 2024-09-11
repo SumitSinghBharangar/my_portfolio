@@ -1,4 +1,12 @@
-import '../../screens/navbar_screens.dart/skill_screen.dart';
+class MySkillItem {
+  String? imageName;
+  String? iconData;
+
+  MySkillItem({
+    this.imageName,
+    this.iconData,
+  });
+}
 
 List<MySkillItem> skillItems = [
   MySkillItem(

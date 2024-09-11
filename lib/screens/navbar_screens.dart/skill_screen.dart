@@ -95,12 +95,4 @@ class SkillScreen extends StatelessWidget {
   }
 }
 
-class MySkillItem {
-  String? imageName;
-  String? iconData;
 
-  MySkillItem({
-    this.imageName,
-    this.iconData,
-  });
-}

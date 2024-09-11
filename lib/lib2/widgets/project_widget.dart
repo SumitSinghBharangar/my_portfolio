@@ -9,6 +9,7 @@ class ProjectWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
+      spacing: 20,
       runAlignment: WrapAlignment.center,
       alignment: WrapAlignment.center,
       crossAxisAlignment: WrapCrossAlignment.center,

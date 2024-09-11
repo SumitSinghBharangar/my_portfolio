@@ -101,13 +101,3 @@ class ProjectScreen extends StatelessWidget {
     );
   }
 }
-
-class MyProjectItem {
-  String? imageName;
-  String? imageAddress;
-
-  MyProjectItem({
-    required this.imageName,
-    required this.imageAddress,
-  });
-}
