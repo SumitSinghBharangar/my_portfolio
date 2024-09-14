@@ -5,8 +5,8 @@ import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/screens/navbar_screens.dart/about_screen.dart';
 import 'package:my_portfolio/screens/navbar_screens.dart/contact_screen.dart';
 import 'package:my_portfolio/screens/navbar_screens.dart/home_screen.dart';
-import 'package:my_portfolio/screens/navbar_screens.dart/project_screen.dart';
-import 'package:my_portfolio/screens/navbar_screens.dart/skill_screen.dart';
+// import 'package:my_portfolio/screens/navbar_screens.dart/project_screen.dart';
+// import 'package:my_portfolio/screens/navbar_screens.dart/skill_screen.dart';
 import 'package:my_portfolio/screens/widgets/navbar_widget.dart';
 
 class DesktopLayoutScreen extends StatefulWidget {
@@ -26,8 +26,8 @@ class _DesktopLayoutScreenState extends State<DesktopLayoutScreen> {
     final List<Widget> screens = [
       HomeScreen(size: size),
       AboutScreen(size: size),
-      SkillScreen(size: size),
-      ProjectScreen(size: size),
+      // SkillScreen(size: size),
+      // ProjectScreen(size: size),
       ContactScreen(size: size),
     ];
     return Scaffold(

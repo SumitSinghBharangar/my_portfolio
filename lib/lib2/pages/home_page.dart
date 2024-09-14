@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/constants/colors.dart';
 
 import 'package:my_portfolio/constants/styles.dart';
 
@@ -100,6 +101,7 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 // projects
+
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: size.width * 0.06),
                   child: const Column(
@@ -120,9 +122,56 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 //  contact
+
+                SizedBox(
+                  height: size.height * 0.2,
+                ),
+
                 Container(
                   width: double.maxFinite,
                   decoration: Styles.gradientDecoration,
+                  child: Column(
+                    children: [
+                      Text(
+                        "Get in touch...",
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 50,
+                      ),
+                      Row(
+                        children: [
+                          Flexible(
+                            child: TextField(
+                              style: TextStyle(color: AppColors.valhalla),
+                              decoration: InputDecoration(
+                                contentPadding: EdgeInsets.all(16),
+                                filled: true,
+                                fillColor: AppColors.paleSlate,
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide.none,
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide.none,
+                                ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide.none,
+                                ),
+                             hintText: "Your Name",
+                             hintStyle: TextStyle(color: AppColors.studio) ),
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ],
             ),
