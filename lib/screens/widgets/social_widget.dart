@@ -1,10 +1,10 @@
+import 'dart:js' as js;
+
 import 'package:bounce/bounce.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:my_portfolio/constants/colors.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'dart:js' as js;
 
 class SocialWidget extends StatelessWidget {
   const SocialWidget({super.key});
@@ -18,9 +18,8 @@ class SocialWidget extends StatelessWidget {
         children: [
           Bounce(
             onTap: () {
-              // launchUrl(
-              //   Uri.parse("https://github.com/SumitSinghBharangar"),
-              // );
+              js.context.callMethod(
+                          "open", ["https://github.com/SumitSinghBharangar"]);
             },
             child: Container(
               height: 40,
@@ -38,10 +37,9 @@ class SocialWidget extends StatelessWidget {
                     onPressed: () {
                       js.context.callMethod(
                           "open", ["https://github.com/SumitSinghBharangar"]);
-                      // launchUrl(
-                      //     Uri.parse("https://github.com/SumitSinghBharangar"));
+                      
                     },
-                    icon: FaIcon(
+                    icon: const FaIcon(
                       FontAwesomeIcons.github,
                       color: AppColors.studio,
                       size: 15,
@@ -49,7 +47,7 @@ class SocialWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           Bounce(
@@ -67,7 +65,7 @@ class SocialWidget extends StatelessWidget {
                 child: IconButton(
                     hoverColor: AppColors.paleSlate,
                     onPressed: () {},
-                    icon: FaIcon(
+                    icon: const FaIcon(
                       FontAwesomeIcons.linkedinIn,
                       color: AppColors.studio,
                       size: 15,
@@ -75,7 +73,7 @@ class SocialWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           Bounce(
@@ -93,7 +91,7 @@ class SocialWidget extends StatelessWidget {
                 child: IconButton(
                     hoverColor: AppColors.paleSlate,
                     onPressed: () {},
-                    icon: FaIcon(
+                    icon: const FaIcon(
                       FontAwesomeIcons.instagram,
                       color: AppColors.studio,
                       size: 15,

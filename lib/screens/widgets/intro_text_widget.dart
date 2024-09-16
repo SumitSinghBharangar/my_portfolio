@@ -22,7 +22,7 @@ class IntroTextWidget extends StatelessWidget {
               fontFamily: "Poppins",
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Text(

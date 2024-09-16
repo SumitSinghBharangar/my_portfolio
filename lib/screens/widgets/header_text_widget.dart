@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:my_portfolio/screens/widgets/social_section.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:my_portfolio/constants/colors.dart';
 import 'package:my_portfolio/screens/widgets/download_cv_widget.dart';
@@ -32,7 +30,7 @@ class HeaderTextWidget extends StatelessWidget {
           ),
           GradientText(
             "App Developer +\nAndroid & ios developer",
-            colors: [AppColors.studio, AppColors.paleSlate],
+            colors: const [AppColors.studio, AppColors.paleSlate],
             style: TextStyle(
               fontSize: size.width * 0.037,
               fontFamily: "Poppins",
@@ -58,9 +56,9 @@ class Social_Large extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       // width: size.width * 0.5,
-      child: Row(
+      child: const Row(
         children: [
           DownloadCvWidget(),
           SizedBox(

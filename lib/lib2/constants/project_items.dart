@@ -34,6 +34,6 @@ List<MyProjectItem> projectItems = [
   MyProjectItem(
     imageName: "ShoeSavvy App",
     imageAddress: "assets/images/shot-05.jpg",
-    projectLink: "https://github.com/SumitSinghBharangar/Shoe-Savvy",
+    projectLink: "https://github.com/SumitSinghBharangar/shoesavvy_app",
   ),
 ];

@@ -12,7 +12,7 @@ class ProfileWidget extends StatelessWidget {
       height: size.width * 0.24,
       width: size.width * 0.24,
       decoration: BoxDecoration(
-          image: DecorationImage(
+          image: const DecorationImage(
             fit: BoxFit.cover,
             image: AssetImage("assets/images/img.jpg"),
           ),

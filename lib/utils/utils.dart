@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class Utils{
+class Utils {
   static go(
       {required BuildContext context,
       required dynamic screen,
@@ -15,6 +15,7 @@ class Utils{
             context,
             CupertinoPageRoute(
               builder: (context) => screen,
-            ));
+            ),
+          );
   }
 }
