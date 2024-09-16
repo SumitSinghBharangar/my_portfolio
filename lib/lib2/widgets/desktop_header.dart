@@ -7,9 +7,11 @@ import '../constants/navitems.dart';
 
 class DesktopHeader extends StatelessWidget {
   final Size size;
+  final Function(int) onNavMenuTap;
   const DesktopHeader({
     super.key,
     required this.size,
+    required this.onNavMenuTap,
   });
 
   @override
@@ -35,7 +37,9 @@ class DesktopHeader extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 10),
               child: CupertinoButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    onNavMenuTap(i);
+                  },
                   child: Text(
                     navItems[i],
                     style: TextStyle(

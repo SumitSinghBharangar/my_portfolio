@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/styles.dart';
+
 import 'package:my_portfolio/lib2/constants/size.dart';
 import 'package:my_portfolio/lib2/widgets/contact_section.dart';
 import 'package:my_portfolio/lib2/widgets/desktop_about_widget.dart';
@@ -24,7 +24,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final scaffoldkey = GlobalKey<ScaffoldState>();
   final scrollController = ScrollController();
-  final List<GlobalKey> navBarKeys = List.generate(4, (index)=> GlobalKey());
+  final List<GlobalKey> navBarKeys = List.generate(5, (index) => GlobalKey());
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,12 @@ class _HomePageState extends State<HomePage> {
           key: scaffoldkey,
           endDrawer: constraints.maxWidth >= kMinDesktopWidth
               ? null
-              : const DrawerMobile(),
+              : DrawerMobile(
+                  onNavItemTap: (int navIndex) {
+                    scaffoldkey.currentState?.closeEndDrawer();
+                    scrollToSection(navIndex);
+                  },
+                ),
           body: Container(
             height: double.infinity,
             width: double.infinity,
@@ -44,11 +49,18 @@ class _HomePageState extends State<HomePage> {
               controller: scrollController,
               scrollDirection: Axis.vertical,
               child: Column(
-                
                 children: [
+                  SizedBox(
+                    key: navBarKeys.first,
+                  ),
                   // main
                   if (constraints.maxWidth >= kMinDesktopWidth)
-                    DesktopHeader(size: size)
+                    DesktopHeader(
+                      size: size,
+                      onNavMenuTap: (int navIndex) {
+                        scrollToSection(navIndex);
+                      },
+                    )
                   else
                     HeaderMobile(
                       size: size,
@@ -57,37 +69,40 @@ class _HomePageState extends State<HomePage> {
                         scaffoldkey.currentState?.openEndDrawer();
                       },
                     ),
-              
+
                   if (constraints.maxWidth >= kMinDesktopWidth)
                     DesktopHomeWidget(size: size)
                   else
                     MobileHomePage(size: size),
-              
+
                   SizedBox(
                     height: size.height * 0.05,
                   ),
-              
+
                   Padding(
+                    key: navBarKeys[1],
                     padding: EdgeInsets.only(left: size.width * 0.06),
                     child: const Text(
                       "About. . .",
                       style: TextStyle(color: Colors.white, fontSize: 26),
                     ),
                   ),
-              
+
                   // about
-              
+
                   if (constraints.maxWidth >= 600)
                     DesktopAboutWidget(size: size)
                   else
                     MobileAboutWidget(size: size * 2),
-              
+
                   // skills
                   const SizedBox(
                     height: 30,
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: size.width * 0.06),
+                    key: navBarKeys[2],
+                    padding:
+                        EdgeInsets.symmetric(horizontal: size.width * 0.06),
                     child: const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -105,11 +120,13 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(
                     height: 40,
                   ),
-              
+
                   // projects
-              
+
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: size.width * 0.06),
+                    key: navBarKeys[3],
+                    padding:
+                        EdgeInsets.symmetric(horizontal: size.width * 0.06),
                     child: const Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
@@ -126,21 +143,24 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-              
+
                   SizedBox(
                     height: size.height * 0.2,
                   ),
-              
+
                   //  contact
-              
-                  ContactSection(size: size),
-              
+
+                  ContactSection(
+                    size: size,
+                    key: navBarKeys[4],
+                  ),
+
                   const SizedBox(
                     height: 20,
                   ),
-              
+
                   // footer
-              
+
                   const Footer(),
                 ],
               ),
@@ -148,6 +168,15 @@ class _HomePageState extends State<HomePage> {
           ),
         );
       },
+    );
+  }
+
+  void scrollToSection(int navIndex) {
+    final key = navBarKeys[navIndex];
+    Scrollable.ensureVisible(
+      key.currentContext!,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
     );
   }
 }
