@@ -19,7 +19,7 @@ class SocialWidget extends StatelessWidget {
           Bounce(
             onTap: () {
               js.context.callMethod(
-                          "open", ["https://github.com/SumitSinghBharangar"]);
+                  "open", ["https://github.com/SumitSinghBharangar"]);
             },
             child: Container(
               height: 40,
@@ -37,7 +37,6 @@ class SocialWidget extends StatelessWidget {
                     onPressed: () {
                       js.context.callMethod(
                           "open", ["https://github.com/SumitSinghBharangar"]);
-                      
                     },
                     icon: const FaIcon(
                       FontAwesomeIcons.github,

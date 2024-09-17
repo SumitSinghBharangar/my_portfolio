@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../screens/widgets/intro_text_widget.dart';
-import '../../screens/widgets/profile_widget.dart';
+import 'intro_text_widget.dart';
+import 'profile_widget.dart';
 
 class MobileAboutWidget extends StatelessWidget {
   final Size size;

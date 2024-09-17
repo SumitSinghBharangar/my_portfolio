@@ -5,7 +5,7 @@ import 'package:my_portfolio/lib2/constants/size.dart';
 
 import '../../constants/colors.dart';
 import '../../constants/styles.dart';
-import '../../screens/widgets/social_widget.dart';
+import 'social_widget.dart';
 import 'custom_textfield.dart';
 
 class ContactSection extends StatelessWidget {

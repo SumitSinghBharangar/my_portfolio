@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../screens/widgets/avatar_img_widget.dart';
 import '../../screens/widgets/download_cv_widget.dart';
 import '../../screens/widgets/header_text_widget.dart';
-import '../../screens/widgets/social_widget.dart';
+import 'social_widget.dart';
 
 class MobileHomePage extends StatelessWidget {
   final Size size;
