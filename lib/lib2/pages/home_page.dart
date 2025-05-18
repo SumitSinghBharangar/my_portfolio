@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/styles.dart';
 
@@ -13,6 +15,7 @@ import 'package:my_portfolio/lib2/widgets/mobile_about_widget.dart';
 import 'package:my_portfolio/lib2/widgets/mobile_home_widget.dart';
 import 'package:my_portfolio/lib2/widgets/project_widget.dart';
 import 'package:my_portfolio/lib2/widgets/skills_widget.dart';
+import 'package:my_portfolio/services/notification_services.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -22,9 +25,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  NotificationServices notificationServices = NotificationServices();
   final scaffoldkey = GlobalKey<ScaffoldState>();
   final scrollController = ScrollController();
   final List<GlobalKey> navBarKeys = List.generate(5, (index) => GlobalKey());
+
+  @override
+  void initState() {
+    notificationServices.requestNotificationPermission();
+    notificationServices.firebaseInit();
+    // nofitificationServices.isTokenRefesh();
+    notificationServices.getDeviceToken().then((value) {
+      log("Device token");
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
