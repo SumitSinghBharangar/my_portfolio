@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../screens/widgets/avatar_img_widget.dart';
-import '../../screens/widgets/download_cv_widget.dart';
-import '../../screens/widgets/header_text_widget.dart';
+import '../../widgets/avatar_img_widget.dart';
+import '../../widgets/download_cv_widget.dart';
+import '../../widgets/header_text_widget.dart';
 import 'social_widget.dart';
 
 class DesktopHomeWidget extends StatelessWidget {
