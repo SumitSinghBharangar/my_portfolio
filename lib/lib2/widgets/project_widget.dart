@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../constants/colors.dart';
+import '../../constants/app_colors.dart';
 import '../constants/project_items.dart';
 
 class ProjectWidget extends StatelessWidget {

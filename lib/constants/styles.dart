@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/constants/colors.dart';
+import 'package:my_portfolio/constants/app_colors.dart';
 
 class Styles{
   static const BoxDecoration gradientDecoration = BoxDecoration(

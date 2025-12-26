@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:my_portfolio/lib2/constants/size.dart';
 
-import '../../constants/colors.dart';
+import '../../constants/app_colors.dart';
 import '../../constants/styles.dart';
 import 'social_widget.dart';
 import 'custom_textfield.dart';

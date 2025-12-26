@@ -2,7 +2,7 @@ import 'package:bounce/bounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../constants/colors.dart';
+import '../../constants/app_colors.dart';
 import '../constants/skill_items.dart';
 
 class SkillsWidget extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
-import 'package:my_portfolio/constants/colors.dart';
+import 'package:my_portfolio/constants/app_colors.dart';
 import 'package:my_portfolio/widgets/download_cv_widget.dart';
 import 'package:my_portfolio/lib2/widgets/social_widget.dart';
 

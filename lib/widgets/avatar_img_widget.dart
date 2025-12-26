@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../constants/colors.dart';
+import '../constants/app_colors.dart';
 
 class AvatarImgWidget extends StatelessWidget {
   const AvatarImgWidget({super.key});

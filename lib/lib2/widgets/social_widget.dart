@@ -4,7 +4,7 @@ import 'package:bounce/bounce.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'package:my_portfolio/constants/colors.dart';
+import 'package:my_portfolio/constants/app_colors.dart';
 
 class SocialWidget extends StatelessWidget {
   const SocialWidget({super.key});

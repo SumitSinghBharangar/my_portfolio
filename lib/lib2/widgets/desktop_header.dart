@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/lib2/widgets/site_logo.dart';
 
-import '../../constants/colors.dart';
+import '../../constants/app_colors.dart';
 import '../constants/navitems.dart';
 
 class DesktopHeader extends StatelessWidget {
