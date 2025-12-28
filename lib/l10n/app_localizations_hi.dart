@@ -10,4 +10,16 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get home => 'होम';
+
+  @override
+  String get about => 'बारे में';
+
+  @override
+  String get projects => 'परियोजनाएं';
+
+  @override
+  String get skills => 'कौशल';
+
+  @override
+  String get contact => 'संपर्क';
 }

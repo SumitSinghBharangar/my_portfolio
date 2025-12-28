@@ -14,7 +14,7 @@ extension StyledContext on BuildContext {
   double get width => mq.size.width;
   double get height => mq.size.height;
 
-  // ThemeData get theme =>Theme.of(context: this);
+  ThemeData get theme => Theme.of(this);
 
   FormFactorType get formFactor {
     if (width < 600) {
@@ -49,6 +49,8 @@ extension StyledContext on BuildContext {
         return LargeInsets();
     }
   }
+
+  ColorScheme get colorScheme => theme.colorScheme;
 
   AppLocalizations get text =>
       AppLocalizations.of(this) ??

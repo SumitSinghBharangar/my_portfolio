@@ -1,4 +1,8 @@
 {
     "@@locale": "hi",
-    "home" : "होम"
+    "home" : "होम",
+    "about" : "बारे में",
+    "projects":"परियोजनाएं",
+    "skills" : "कौशल",
+    "contact" : "संपर्क"
 }

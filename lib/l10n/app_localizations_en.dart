@@ -10,4 +10,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get home => 'Home';
+
+  @override
+  String get about => 'About';
+
+  @override
+  String get projects => 'Projects';
+
+  @override
+  String get skills => 'Skills';
+
+  @override
+  String get contact => 'Contact';
 }
