@@ -127,6 +127,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Contact'**
   String get contact;
+
+  /// No description provided for @sumitsingh.
+  ///
+  /// In en, this message translates to:
+  /// **'Sumit Singh'**
+  String get sumitsingh;
+
+  /// No description provided for @mobileAppDeveloper.
+  ///
+  /// In en, this message translates to:
+  /// **'Mobile Application Developer'**
+  String get mobileAppDeveloper;
+
+  /// No description provided for @mobileAppDeveloperDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'I’m a passionate Flutter developer with expertise in creating high-performance, cross-platform mobile applications. My strong foundation in Dart, Firebase, and seamless API integration allows me to bring ideas to life with clean, efficient, and scalable code. \n\n📫 Open to collaborations and exciting projects, I\'m eager to connect with fellow developers and tech enthusiasts. Let\'s build something amazing together! Happy coding! 🖥️'**
+  String get mobileAppDeveloperDesc;
 }
 
 class _AppLocalizationsDelegate

@@ -16,7 +16,7 @@ class HeroTexts extends StatelessWidget {
           : CrossAxisAlignment.center,
       children: [
         SEOText(
-          context.texts.sumitsingh,
+          context.text.sumitsingh,
           textAlign:
               context.isDesktopOrTablet ? TextAlign.left : TextAlign.center,
           style: context.textStyle.titleLgBold.copyWith(
@@ -24,9 +24,9 @@ class HeroTexts extends StatelessWidget {
           ),
           textRendererStyle: TextRendererStyle.header1,
         ), // SEOText
-        Gap(Insets.sm),
+        // Gap(Insets.xl),
         SEOText(
-          context.texts.mobileAppDeveloper,
+          context.text.mobileAppDeveloper,
           textAlign:
               context.isDesktopOrTablet ? TextAlign.left : TextAlign.center,
           style: context.textStyle.titleMdMedium.copyWith(
@@ -34,7 +34,7 @@ class HeroTexts extends StatelessWidget {
           ),
           textRendererStyle: TextRendererStyle.header2,
         ), // SEOText
-        Gap(Insets.lg),
+        // Gap(Insets.xl),
         SEOText(
           context.text.mobileAppDeveloperDesc,
           textAlign:

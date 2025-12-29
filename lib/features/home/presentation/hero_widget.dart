@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:my_portfolio/constants/app_extensions.dart';
 import 'package:my_portfolio/constants/app_size.dart';
+import 'package:my_portfolio/features/home/presentation/hero_images.dart';
 import 'package:my_portfolio/features/home/presentation/hero_texts.dart';
 
 class HeroWidget extends StatelessWidget {
@@ -11,15 +12,15 @@ class HeroWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Flutter'),
-        context.isDesktop || context.isTablet ? _LargeHero() : _SmallHero(),
+        const Text('Flutter'),
+        context.isDesktopOrTablet ? const _LargeHero() : const _SmallHero(),
       ],
     );
   }
 }
 
 class _SmallHero extends StatelessWidget {
-  const _SmallHero({super.key});
+  const _SmallHero();
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +29,35 @@ class _SmallHero extends StatelessWidget {
         ConstrainedBox(
           constraints: const BoxConstraints(
             maxWidth: 140,
+            maxHeight: 200,
           ),
+          child: const HeroImages(),
         ),
-         Gap(Insets.xl),
-         const HeroTexts(),
-         Gap(Insets.xxxl),
-         SmallHeroButtons(),
+        Gap(Insets.xl),
+        const HeroTexts(),
+        Gap(Insets.xxxl),
+      ],
+    );
+  }
+}
+
+class _LargeHero extends StatelessWidget {
+  const _LargeHero();
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        const Expanded(child: HeroImages()),
+        Gap(Insets.xxxl),
+        Expanded(
+            flex: 2,
+            child: Column(
+              children: [
+                const HeroTexts(),
+                Gap(Insets.xxxl),
+              ],
+            ))
       ],
     );
   }

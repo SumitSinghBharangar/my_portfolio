@@ -8,11 +8,15 @@ class SEOText extends StatelessWidget {
     this.style,
     this.textAlign,
     this.textRendererStyle,
+    this.maxlines,
+    this.overflow,
   });
   final String text;
   final TextStyle? style;
   final TextAlign? textAlign;
   final TextRendererStyle? textRendererStyle;
+  final int? maxlines;
+  final TextOverflow? overflow;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +24,8 @@ class SEOText extends StatelessWidget {
       text,
       style: style,
       textAlign: textAlign,
+      maxLines: maxlines,
+      overflow: overflow,
     );
   }
 }
