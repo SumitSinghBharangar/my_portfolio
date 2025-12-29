@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PortfolioProvider with ChangeNotifier {
-  bool? _isdraweropening;
-  bool? get isdraweropening => _isdraweropening;
+  bool isDrawerOpen = false;
+
   String? _code;
   String? get code => _code;
   ThemeMode? _theme;
@@ -42,7 +42,8 @@ class PortfolioProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void changeopening(){
-    
+  void toggleDrawer() {
+    isDrawerOpen = !isDrawerOpen;
+    notifyListeners();
   }
 }

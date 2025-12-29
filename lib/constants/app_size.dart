@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
-
 class Insets {
-
   static double get xs => 4;
+  static double get xl => 24;
+  static double get xxxl => 80;
 
   static double get med => 12;
   static const double maxwidth = 1200;

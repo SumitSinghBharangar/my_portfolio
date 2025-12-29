@@ -10,7 +10,7 @@ import 'package:my_portfolio/firebase_options.dart';
 import 'package:my_portfolio/l10n/app_localizations.dart';
 import 'package:my_portfolio/lib2/pages/home_page.dart';
 import 'package:my_portfolio/provider/providers.dart';
-import 'package:my_portfolio/screens/home_screen.dart';
+import 'package:my_portfolio/features/home/presentation/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

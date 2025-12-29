@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/constants/background_blur.dart';
 import 'package:my_portfolio/widgets/my_app_bar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -7,7 +8,12 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Myappbar(),
+      body: Stack(
+        children: [
+          BackgroundBlur(),
+          Myappbar(),
+        ],
+      ),
     );
   }
 }

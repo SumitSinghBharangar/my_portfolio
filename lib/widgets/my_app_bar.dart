@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:my_portfolio/constants/app_extensions.dart';
@@ -70,7 +68,7 @@ class AppLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    log(width.toString());
+
     return Text(
       "Portfolio",
       style: context.textStyle.titleLgBold,

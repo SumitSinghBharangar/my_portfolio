@@ -10,46 +10,40 @@ class AppBarDrawerIcon extends StatefulWidget {
 }
 
 class _AppBarDrawerIconState extends State<AppBarDrawerIcon>
-    with TickerProviderStateMixin {
-  late AnimationController controller;
-  late Animation<double> animation;
-  bool isopen = false;
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _iconController;
 
   @override
   void initState() {
     super.initState();
-    controller = AnimationController(
+    _iconController = AnimationController(
       vsync: this,
-      duration: const Duration(
-        milliseconds: 200,
-      ),
+      duration: const Duration(milliseconds: 200),
     );
-    animation = Tween<double>(begin: 0.0, end: 1.0).animate(controller);
+  }
+
+  @override
+  void dispose() {
+    _iconController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    var w = context.watch<PortfolioProvider>();
-    return Consumer(
-      builder: (context,provider,child) {
+    return Consumer<PortfolioProvider>(
+      builder: (context, provider, _) {
+        provider.isDrawerOpen
+            ? _iconController.forward()
+            : _iconController.reverse();
+
         return IconButton(
-          onPressed: () {
-            setState(() {
-              if (isopen) {
-                controller.forward();
-              } else {
-                controller.reverse();
-              }
-              isopen = !isopen;
-              
-            });
-          },
+          onPressed: provider.toggleDrawer,
           icon: AnimatedIcon(
             icon: AnimatedIcons.menu_close,
-            progress: animation,
+            progress: _iconController,
           ),
         );
-      }
+      },
     );
   }
 }
