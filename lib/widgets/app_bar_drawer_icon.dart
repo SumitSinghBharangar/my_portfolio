@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/provider/providers.dart';
+import 'package:provider/provider.dart';
 
 class AppBarDrawerIcon extends StatefulWidget {
   const AppBarDrawerIcon({super.key});
@@ -27,18 +29,27 @@ class _AppBarDrawerIconState extends State<AppBarDrawerIcon>
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-        onPressed: () {
-          setState(() {
-            if (isopen) {
-              controller.forward();
-            } else {
-              controller.reverse();
-            }
-            isopen = !isopen;
-          });
-        },
-        icon:
-            AnimatedIcon(icon: AnimatedIcons.menu_close, progress: animation));
+    var w = context.watch<PortfolioProvider>();
+    return Consumer(
+      builder: (context,provider,child) {
+        return IconButton(
+          onPressed: () {
+            setState(() {
+              if (isopen) {
+                controller.forward();
+              } else {
+                controller.reverse();
+              }
+              isopen = !isopen;
+              
+            });
+          },
+          icon: AnimatedIcon(
+            icon: AnimatedIcons.menu_close,
+            progress: animation,
+          ),
+        );
+      }
+    );
   }
 }

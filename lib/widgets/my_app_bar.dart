@@ -10,45 +10,55 @@ import 'package:my_portfolio/l10n/app_localizations.dart';
 import 'package:my_portfolio/l10n/app_localizations_en.dart';
 import 'package:my_portfolio/provider/providers.dart';
 import 'package:my_portfolio/widgets/app_bar_drawer_icon.dart';
+import 'package:my_portfolio/widgets/drawer_menu_widget.dart';
+import 'package:my_portfolio/widgets/theme_toggle_widget.dart';
 import 'package:provider/provider.dart';
 
-class Myappbar extends StatelessWidget {
+class Myappbar extends StatefulWidget {
   const Myappbar({super.key});
 
   @override
+  State<Myappbar> createState() => _MyappbarState();
+}
+
+class _MyappbarState extends State<Myappbar> {
+  @override
   Widget build(BuildContext context) {
     return Consumer<PortfolioProvider>(builder: (context, provider, child) {
-      return AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        alignment: Alignment.center,
-        padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
-        height: context.insets.appBarHeight,
-        color: context.theme.appBarTheme.backgroundColor,
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(
-            maxWidth: Insets.maxwidth,
+      return Column(
+        children: [
+          AnimatedContainer(
+            duration: const Duration(milliseconds: 200),
+            alignment: Alignment.center,
+            padding: EdgeInsets.symmetric(horizontal: context.insets.padding),
+            height: context.insets.appBarHeight,
+            color: context.theme.appBarTheme.backgroundColor,
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(
+                maxWidth: Insets.maxwidth,
+              ),
+              child: Row(
+                children: [
+                  AppLogo(),
+                  Spacer(),
+                  if (context.isDesktop) LargeMenu(),
+                  Spacer(),
+                  IconButton(
+                      onPressed: () {
+                        provider.changeLanguage();
+                      },
+                      icon: Icon(
+                        Iconsax.translate,
+                        color: context.colorScheme.onBackground,
+                      )),
+                  ThemeToggle(),
+                  if (!context.isDesktop) const AppBarDrawerIcon()
+                ],
+              ),
+            ),
           ),
-          child: Row(
-            children: [
-              AppLogo(),
-              Spacer(),
-              if (context.isDesktop) LargeMenu(),
-              Spacer(),
-              IconButton(
-                  onPressed: () {
-                    provider.changeLanguage();
-                    log("language changed");
-                    
-                  },
-                  icon: Icon(
-                    Iconsax.translate,
-                    color: context.colorScheme.onBackground,
-                  )),
-              ThemeToggle(),
-              if (!context.isDesktop) const AppBarDrawerIcon()
-            ],
-          ),
-        ),
+          if (!context.isDesktop) const DrawerMenu(),
+        ],
       );
     });
   }
@@ -74,6 +84,25 @@ class LargeMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      children: AppMenuList.getItems(context)
+          .map(
+            (e) => LargeAppBarMenuItems(
+              text: e.title,
+              isSelected: true,
+              onTap: () {},
+            ),
+          )
+          .toList(),
+    );
+  }
+}
+
+class SmallMenu extends StatelessWidget {
+  const SmallMenu({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
       children: AppMenuList.getItems(context)
           .map(
             (e) => LargeAppBarMenuItems(
@@ -113,18 +142,6 @@ class LargeAppBarMenuItems extends StatelessWidget {
           style: SmallTextStyles().bodyLgMedium,
         ),
       ),
-    );
-  }
-}
-
-class ThemeToggle extends StatelessWidget {
-  const ThemeToggle({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Switch(
-      value: false,
-      onChanged: (value) {},
     );
   }
 }

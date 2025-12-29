@@ -1,13 +1,48 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class PortfolioProvider with ChangeNotifier{
-  bool isEnglish = true;
+class PortfolioProvider with ChangeNotifier {
+  bool? _isdraweropening;
+  bool? get isdraweropening => _isdraweropening;
+  String? _code;
+  String? get code => _code;
+  ThemeMode? _theme;
+  ThemeMode? get theme => _theme;
 
+  void changeLanguage() async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    String? loc = sp.getString("language_code");
 
-  void changeLanguage(){
-    if(isEnglish){
-      isEnglish = !isEnglish;
+    if (loc == "hi") {
+      await sp.setString("language_code", "en");
+      _code = "en";
+    } else {
+      await sp.setString("language_code", "hi");
+      _code = "hi";
     }
+
+    log(loc ?? "false");
     notifyListeners();
+  }
+
+  void changeTheme() async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    String? themecode = sp.getString("theme_code") ?? "";
+
+    if (themecode == ThemeMode.dark.toString()) {
+      sp.setString("theme_code", ThemeMode.light.toString());
+      _theme = ThemeMode.light;
+    } else {
+      sp.setString("theme_code", ThemeMode.dark.toString());
+      _theme = ThemeMode.dark;
+    }
+    log("themechanged");
+    notifyListeners();
+  }
+
+  void changeopening(){
+    
   }
 }
