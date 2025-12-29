@@ -12,15 +12,14 @@ class SkillsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Wrap(
       spacing: 10,
-      
       alignment: WrapAlignment.start,
       crossAxisAlignment: WrapCrossAlignment.start,
       children: [
         for (int i = 0; i < skillItems.length; i++)
           Bounce(
             child: Container(
-              height: 140,
-              width: 140,
+              height: 150,
+              width: 150,
               margin: const EdgeInsets.only(top: 20, left: 10, right: 10),
               decoration: BoxDecoration(
                 color: Colors.transparent.withOpacity(0.3),

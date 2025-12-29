@@ -3,9 +3,11 @@ import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:gap/gap.dart';
 import 'package:my_portfolio/constants/app_colors.dart';
 import 'package:my_portfolio/constants/app_extensions.dart';
 import 'package:my_portfolio/lib2/constants/skill_items.dart';
+import 'package:my_portfolio/widgets/home_title_subtitle.dart';
 
 const skilllen = 6;
 const skillPointSize = 16.0;
@@ -26,8 +28,12 @@ class DesktopSkillsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        HomeTitleSubtitle(title: context.text.skills, subtitle: ""),
+        Gap(10),
         Stack(
           children: [
             Center(
@@ -82,7 +88,7 @@ class DesktopSkillsBody extends StatelessWidget {
                   ),
                 ),
               Positioned(
-                  top: i * skillScaleFactor + skillPointFactor / 2 - 3,
+                  top: i * skillScaleFactor + (skillPointFactor + 16) / 2 - 20,
                   right: 0,
                   left: 0,
                   child: Container(
@@ -120,7 +126,7 @@ class SkillsItem extends StatelessWidget {
       child: Container(
         height: 140,
         width: 140,
-        margin: const EdgeInsets.only(top: 20, left: 10, right: 10),
+        // margin: const EdgeInsets.only(top: 20, left: 10, right: 10),
         decoration: BoxDecoration(
           color: Colors.transparent.withOpacity(0.3),
           borderRadius: BorderRadius.circular(20),

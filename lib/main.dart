@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:my_portfolio/constants/app_theme.dart';
+import 'package:my_portfolio/routes/app_route.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -50,7 +51,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Consumer(builder: (context, provider, child) {
       var w = context.watch<PortfolioProvider>();
-      return MaterialApp(
+      return MaterialApp.router(
         localizationsDelegates: const [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
@@ -69,7 +70,7 @@ class _MyAppState extends State<MyApp> {
         // ThemeData(
         //     colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         //     useMaterial3: true),
-        home: const HomeScreen(),
+        routerConfig: AppRoutes.router,
         // change it to homepage
       );
     });
