@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:my_portfolio/constants/app_extensions.dart';
 import 'package:my_portfolio/constants/app_menu_list.dart';
 import 'package:my_portfolio/constants/app_size.dart';
 import 'package:my_portfolio/constants/app_text_style.dart';
-import 'package:my_portfolio/l10n/app_localizations.dart';
-import 'package:my_portfolio/l10n/app_localizations_en.dart';
 import 'package:my_portfolio/provider/providers.dart';
 import 'package:my_portfolio/widgets/app_bar_drawer_icon.dart';
 import 'package:my_portfolio/widgets/drawer_menu_widget.dart';
@@ -67,8 +66,6 @@ class AppLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-
     return Text(
       "Portfolio",
       style: context.textStyle.titleLgBold,
@@ -86,8 +83,10 @@ class LargeMenu extends StatelessWidget {
           .map(
             (e) => LargeAppBarMenuItems(
               text: e.title,
-              isSelected: true,
-              onTap: () {},
+              isSelected: GoRouterState.of(context).fullPath == e.path,
+              onTap: () {
+                context.go(e.path);
+              },
             ),
           )
           .toList(),
@@ -105,8 +104,10 @@ class SmallMenu extends StatelessWidget {
           .map(
             (e) => LargeAppBarMenuItems(
               text: e.title,
-              isSelected: true,
-              onTap: () {},
+              isSelected: GoRouterState.of(context).fullPath == e.path,
+              onTap: () {
+                context.go(e.path);
+              },
             ),
           )
           .toList(),
@@ -137,7 +138,11 @@ class LargeAppBarMenuItems extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: SmallTextStyles().bodyLgMedium,
+          style: SmallTextStyles().bodyLgMedium.copyWith(
+                color: isSelected
+                    ? context.colorScheme.onBackground
+                    : context.colorScheme.onSurfaceVariant,
+              ),
         ),
       ),
     );

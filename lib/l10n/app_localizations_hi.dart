@@ -32,4 +32,8 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get mobileAppDeveloperDesc =>
       'मैं एक उत्साही Flutter डेवलपर हूँ, जिसे उच्च-प्रदर्शन और क्रॉस-प्लेटफॉर्म मोबाइल एप्लिकेशन बनाने का अनुभव है। Dart, Firebase और seamless API integration में मेरी मजबूत पकड़ मुझे साफ़, प्रभावी और scalable कोड के साथ आइडियाज़ को हकीकत में बदलने में मदद करती है।\n\n📫 सहयोग और रोमांचक प्रोजेक्ट्स के लिए हमेशा तैयार हूँ। अन्य डेवलपर्स और टेक उत्साही लोगों से जुड़ने के लिए उत्सुक हूँ। आइए मिलकर कुछ शानदार बनाते हैं! Happy coding! 🖥️';
+
+  @override
+  String get aboutTitle =>
+      'सुमित सिंह (मोबाइल एप्लिकेशन डेवलपर | फ्लटर डेवलपर)';
 }

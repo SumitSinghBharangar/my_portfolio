@@ -32,4 +32,8 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get mobileAppDeveloperDesc =>
       'I’m a passionate Flutter developer with expertise in creating high-performance, cross-platform mobile applications. My strong foundation in Dart, Firebase, and seamless API integration allows me to bring ideas to life with clean, efficient, and scalable code. \n\n📫 Open to collaborations and exciting projects, I\'m eager to connect with fellow developers and tech enthusiasts. Let\'s build something amazing together! Happy coding! 🖥️';
+
+  @override
+  String get aboutTitle =>
+      'Sumit Singh (Mobile Application Developer  | Flutter Developer)';
 }

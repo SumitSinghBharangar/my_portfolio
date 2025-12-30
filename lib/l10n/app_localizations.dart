@@ -145,6 +145,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'I’m a passionate Flutter developer with expertise in creating high-performance, cross-platform mobile applications. My strong foundation in Dart, Firebase, and seamless API integration allows me to bring ideas to life with clean, efficient, and scalable code. \n\n📫 Open to collaborations and exciting projects, I\'m eager to connect with fellow developers and tech enthusiasts. Let\'s build something amazing together! Happy coding! 🖥️'**
   String get mobileAppDeveloperDesc;
+
+  /// No description provided for @aboutTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sumit Singh (Mobile Application Developer  | Flutter Developer)'**
+  String get aboutTitle;
 }
 
 class _AppLocalizationsDelegate
