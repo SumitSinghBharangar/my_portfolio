@@ -6,10 +6,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:my_portfolio/constants/app_colors.dart';
 import 'package:my_portfolio/constants/app_extensions.dart';
-import 'package:my_portfolio/lib2/constants/skill_items.dart';
+import 'package:my_portfolio/features/skills/data/skill_data.dart';
+
 import 'package:my_portfolio/widgets/home_title_subtitle.dart';
 
-const skilllen = 6;
+final skilllen = skillItems.length;
 const skillPointSize = 16.0;
 const skillScaleFactor = 150.0;
 const skillPointFactor = skillScaleFactor;
@@ -33,7 +34,7 @@ class DesktopSkillsBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         HomeTitleSubtitle(title: context.text.skills, subtitle: ""),
-        Gap(10),
+        const Gap(10),
         Stack(
           children: [
             Center(
@@ -59,7 +60,10 @@ class DesktopSkillsBody extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const SkillsItem(),
+                        SkillsItem(
+                          img: skillItems[i].iconData.toString(),
+                          name: skillItems[i].imageName.toString(),
+                        ),
                         SizedBox(
                           width: context.isDesktop ? 250 : 90,
                           child: DottedLine(
@@ -83,7 +87,10 @@ class DesktopSkillsBody extends StatelessWidget {
                           dashColor: context.colorScheme.onBackground,
                         ),
                       ),
-                      SkillsItem(),
+                      SkillsItem(
+                        img: skillItems[i].iconData.toString(),
+                        name: skillItems[i].imageName.toString(),
+                      ),
                     ],
                   ),
                 ),
@@ -118,7 +125,9 @@ class DesktopSkillsBody extends StatelessWidget {
 }
 
 class SkillsItem extends StatelessWidget {
-  const SkillsItem({super.key});
+  final String img;
+  final String name;
+  const SkillsItem({super.key, required this.img, required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -128,7 +137,7 @@ class SkillsItem extends StatelessWidget {
         width: 140,
         // margin: const EdgeInsets.only(top: 20, left: 10, right: 10),
         decoration: BoxDecoration(
-          color: Colors.transparent.withOpacity(0.3),
+          color: context.colorScheme.surface,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: AppColors.studio, width: 1.3),
         ),
@@ -137,15 +146,17 @@ class SkillsItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SvgPicture.asset(
-              skillItems[0].iconData.toString(),
+              img,
+              // skillItems[0].iconData.toString(),
               height: 60,
-              color: Colors.white,
+              color: context.colorScheme.onBackground,
             ),
             const SizedBox(
               height: 5,
             ),
             Text(
-              skillItems[0].imageName.toString(),
+              name,
+              // skillItems[0].imageName.toString(),
               style: context.textStyle.bodyLgBold.copyWith(
                 color: context.colorScheme.onBackground,
               ),

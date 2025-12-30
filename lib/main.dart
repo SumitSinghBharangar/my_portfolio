@@ -1,23 +1,18 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:my_portfolio/constants/app_theme.dart';
+import 'package:my_portfolio/provider/project_provider.dart';
 import 'package:my_portfolio/routes/app_route.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:my_portfolio/firebase_options.dart';
 import 'package:my_portfolio/l10n/app_localizations.dart';
-import 'package:my_portfolio/lib2/pages/home_page.dart';
+
 import 'package:my_portfolio/provider/providers.dart';
-import 'package:my_portfolio/features/home/presentation/home_screen.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
   SharedPreferences sp = await SharedPreferences.getInstance();
   final String code = sp.getString("language_code") ?? "en";
 
@@ -25,6 +20,7 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => PortfolioProvider()),
+        ChangeNotifierProvider(create: (_) => ProjectProvider()),
       ],
       child: Consumer(builder: (context, provider, child) {
         return MyApp(
