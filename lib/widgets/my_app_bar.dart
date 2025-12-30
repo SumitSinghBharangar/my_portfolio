@@ -73,6 +73,18 @@ class AppLogo extends StatelessWidget {
   }
 }
 
+class GetTouchText extends StatelessWidget {
+  const GetTouchText({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "Get in Touch",
+      style: context.textStyle.titleLgBold,
+    );
+  }
+}
+
 class LargeMenu extends StatelessWidget {
   const LargeMenu({super.key});
 

@@ -33,7 +33,6 @@ class _PhoneFooter extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         AppLogo(),
-        SmallMenu(),
         _FooterLinks(),
       ],
     );
@@ -46,7 +45,7 @@ class _DesktopFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Row(
-      children: [AppLogo(), Spacer(), LargeMenu(), Spacer(), _FooterLinks()],
+      children: [GetTouchText(), Spacer(), _FooterLinks()],
     );
   }
 }

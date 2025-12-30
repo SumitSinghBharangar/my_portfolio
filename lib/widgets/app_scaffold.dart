@@ -3,9 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:my_portfolio/constants/app_extensions.dart';
 import 'package:my_portfolio/constants/app_size.dart';
 import 'package:my_portfolio/constants/background_blur.dart';
-import 'package:my_portfolio/features/home/presentation/hero_widget.dart';
-import 'package:my_portfolio/features/home/presentation/home_project_list.dart';
-import 'package:my_portfolio/features/home/presentation/skills_body.dart';
+
 import 'package:my_portfolio/widgets/my_app_bar.dart';
 import 'package:my_portfolio/widgets/my_footer.dart';
 

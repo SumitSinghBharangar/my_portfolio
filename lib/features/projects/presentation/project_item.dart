@@ -80,7 +80,7 @@ class ProjectItem extends StatelessWidget {
                 Bounce(
                   onTap: () {},
                   child: const Chip(
-                    label: Text("Source Code"),
+                    label: Text("Source"),
                   ),
                 ),
                 const Gap(10),

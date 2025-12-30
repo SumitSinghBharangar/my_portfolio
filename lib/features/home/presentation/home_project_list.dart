@@ -74,7 +74,8 @@ class HomeProjectListmobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    var list = AppStore.projects;
+    return Center(
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
@@ -82,45 +83,31 @@ class HomeProjectListmobile extends StatelessWidget {
             SizedBox(
               width: 240,
               child: ProjectItem(
-                imgUrl:
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNubLmqdOK9pZWU-2IiD20cuSIdUUDi9-NvQ&s',
-                name: 'hello',
-                desc: 'this the description',
-                apkLink: 'fdfdfd',
-                link: 'fdfdfd',
+                imgUrl: list[4].imgUrl,
+                name: list[4].name,
+                desc: list[4].desc,
+                apkLink: list[4].desc,
+                link: list[4].link,
               ),
             ),
             SizedBox(
               width: 240,
               child: ProjectItem(
-                imgUrl:
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNubLmqdOK9pZWU-2IiD20cuSIdUUDi9-NvQ&s',
-                name: 'hello',
-                desc: 'this the description',
-                apkLink: 'fdfdfd',
-                link: 'fdfdfd',
+                imgUrl: list[2].imgUrl,
+                name: list[2].name,
+                desc: list[2].desc,
+                apkLink: list[2].desc,
+                link: list[2].link,
               ),
             ),
             SizedBox(
               width: 240,
               child: ProjectItem(
-                imgUrl:
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNubLmqdOK9pZWU-2IiD20cuSIdUUDi9-NvQ&s',
-                name: 'hello',
-                desc: 'this the description',
-                apkLink: 'fdfdfd',
-                link: 'fdfdfd',
-              ),
-            ),
-            SizedBox(
-              width: 240,
-              child: ProjectItem(
-                imgUrl:
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNubLmqdOK9pZWU-2IiD20cuSIdUUDi9-NvQ&s',
-                name: 'hello',
-                desc: 'this the description',
-                apkLink: 'fdfdfd',
-                link: 'fdfdfd',
+                imgUrl: list[4].imgUrl,
+                name: list[4].name,
+                desc: list[4].desc,
+                apkLink: list[4].desc,
+                link: list[4].link,
               ),
             ),
           ],
