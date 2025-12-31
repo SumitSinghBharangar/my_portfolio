@@ -21,10 +21,6 @@ class AppMenuList {
         title: context.text.projects,
         path: Routes.projects,
       ),
-      AppMenu(
-        title: context.text.contact,
-        path: Routes.contact,
-      ),
     ];
   }
 }

@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:my_portfolio/constants/app_extensions.dart';
@@ -10,14 +11,53 @@ class MyFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: context.theme.appBarTheme.backgroundColor,
-      padding: EdgeInsets.all(context.insets.padding),
+      padding: EdgeInsets.symmetric(
+        horizontal: context.insets.padding,
+        vertical: context.insets.padding / 2,
+      ),
       child: Column(
         children: [
-          context.isDesktop ? _DesktopFooter() : _PhoneFooter(),
+          context.isDesktop ? const _DesktopFooter() : const _PhoneFooter(),
           const Divider(
             height: 24,
           ),
+          const FooterDescText(),
         ],
+      ),
+    );
+  }
+}
+
+class FooterDescText extends StatelessWidget {
+  const FooterDescText({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: context.insets.padding,
+      ),
+      child: RichText(
+        textAlign: TextAlign.center,
+        text: TextSpan(
+          style: context.textStyle.bodyMdMedium.copyWith(
+            color: context.colorScheme.onBackground,
+          ),
+          children: [
+            const TextSpan(text: 'Want to chat? Just shoot me a dm '),
+            TextSpan(
+              text: 'with a direct question on twitter',
+              style: context.textStyle.bodyMdMedium.copyWith(
+                color: Colors.blue,
+              ),
+              recognizer: TapGestureRecognizer()..onTap = () {},
+            ),
+            const TextSpan(
+              text:
+                  ' and I\'ll respond whenever I can. I will ignore all soliciting.',
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -32,7 +72,7 @@ class _PhoneFooter extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        AppLogo(),
+        GetTouchText(),
         _FooterLinks(),
       ],
     );

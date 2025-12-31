@@ -12,7 +12,6 @@ class HeroWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text('Flutter'),
         context.isDesktopOrTablet ? const _LargeHero() : const _SmallHero(),
       ],
     );

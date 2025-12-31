@@ -9,79 +9,77 @@ abstract class AppTextStyle {
   TextStyle get bodyLgBold;
 }
 
-class SmallTextStyles extends AppTextStyle{
+class SmallTextStyles extends AppTextStyle {
   @override
   TextStyle get bodyLgBold => const TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.bold,
-  );
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+      );
 
   @override
   TextStyle get bodyLgMedium => const TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w500,
-  );
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+      );
 
   @override
   TextStyle get bodyMdMedium => const TextStyle(
-    fontSize: 12,
-    fontWeight: FontWeight.w500,
-  );
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+      );
 
   @override
   TextStyle get titleLgBold => const TextStyle(
-    fontSize: 24,
-    fontWeight: FontWeight.bold,
-  );
+        fontSize: 26,
+        fontWeight: FontWeight.bold,
+      );
   @override
   TextStyle get titleMdMedium => const TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w500,
-  );
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+      );
 
   @override
   TextStyle get titleSmBold => const TextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.bold,
-  );
-
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+      );
 }
 
-class LargeTextStyle extends AppTextStyle{
+class LargeTextStyle extends AppTextStyle {
   @override
   TextStyle get bodyLgBold => const TextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.bold,
-  );
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+      );
 
   @override
   TextStyle get bodyLgMedium => const TextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.w500,
-  );
+        fontSize: 18,
+        fontWeight: FontWeight.w500,
+      );
 
   @override
   TextStyle get bodyMdMedium => const TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w500,
-  );
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+      );
 
   @override
   TextStyle get titleLgBold => const TextStyle(
-    fontSize: 40,
-    fontWeight: FontWeight.bold,
-  );
+        fontSize: 40,
+        fontWeight: FontWeight.bold,
+      );
 
   @override
   TextStyle get titleMdMedium => const TextStyle(
-    fontSize: 24,
-    fontWeight: FontWeight.w500,
-  );
+        fontSize: 26,
+        fontWeight: FontWeight.w500,
+      );
 
   @override
   TextStyle get titleSmBold => const TextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.bold,
-  );
-
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+      );
 }

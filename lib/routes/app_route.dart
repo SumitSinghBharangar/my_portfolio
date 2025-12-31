@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/features/about/presentation/about_page.dart';
-import 'package:my_portfolio/features/contact/presentation/contact_page.dart';
+
 import 'package:my_portfolio/features/home/presentation/home_screen.dart';
 import 'package:my_portfolio/features/projects/presentation/project_page.dart';
 import 'package:my_portfolio/features/skills/presentation/skills_page.dart';
@@ -38,12 +38,6 @@ class AppRoutes {
         path: Routes.projects,
         pageBuilder: (context, state) => const NoTransitionPage(
           child: ProjectPage(),
-        ),
-      ),
-      GoRoute(
-        path: Routes.contact,
-        pageBuilder: (context, state) => const NoTransitionPage(
-          child: ContactPage(),
         ),
       ),
     ],

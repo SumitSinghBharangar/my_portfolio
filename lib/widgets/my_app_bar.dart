@@ -36,10 +36,10 @@ class _MyappbarState extends State<Myappbar> {
               ),
               child: Row(
                 children: [
-                  AppLogo(),
-                  Spacer(),
-                  if (context.isDesktop) LargeMenu(),
-                  Spacer(),
+                  const AppLogo(),
+                  const Spacer(),
+                  if (context.isDesktop) const LargeMenu(),
+                  const Spacer(),
                   IconButton(
                       onPressed: () {
                         provider.changeLanguage();
@@ -48,7 +48,7 @@ class _MyappbarState extends State<Myappbar> {
                         Iconsax.translate,
                         color: context.colorScheme.onBackground,
                       )),
-                  ThemeToggle(),
+                  const ThemeToggle(),
                   if (!context.isDesktop) const AppBarDrawerIcon()
                 ],
               ),

@@ -23,7 +23,6 @@ class PortfolioProvider with ChangeNotifier {
       _code = "hi";
     }
 
-    log(loc ?? "false");
     notifyListeners();
   }
 
@@ -38,7 +37,7 @@ class PortfolioProvider with ChangeNotifier {
       sp.setString("theme_code", ThemeMode.dark.toString());
       _theme = ThemeMode.dark;
     }
-    log("themechanged");
+
     notifyListeners();
   }
 
