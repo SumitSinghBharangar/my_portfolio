@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:my_portfolio/constants/app_extensions.dart';
 import 'package:my_portfolio/widgets/my_app_bar.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyFooter extends StatelessWidget {
   const MyFooter({super.key});
@@ -50,7 +51,17 @@ class FooterDescText extends StatelessWidget {
               style: context.textStyle.bodyMdMedium.copyWith(
                 color: Colors.blue,
               ),
-              recognizer: TapGestureRecognizer()..onTap = () {},
+              recognizer: TapGestureRecognizer()
+                ..onTap = () async {
+                  final Uri uri = Uri.parse("https://x.com/sumit_bharangar");
+
+                  if (!await launchUrl(
+                    uri,
+                    mode: LaunchMode.externalApplication,
+                  )) {
+                    throw 'Could not launch $uri';
+                  }
+                },
             ),
             const TextSpan(
               text:
@@ -98,9 +109,46 @@ class _FooterLinks extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        _FooterLinkItems(onPressed: () {}, icon: "assets/images/github.svg"),
-        _FooterLinkItems(onPressed: () {}, icon: "assets/images/github.svg"),
-        _FooterLinkItems(onPressed: () {}, icon: "assets/images/github.svg"),
+        _FooterLinkItems(
+          onPressed: () async {
+            final Uri uri = Uri.parse("https://github.com/SumitSinghBharangar");
+
+            if (!await launchUrl(
+              uri,
+              mode: LaunchMode.externalApplication,
+            )) {
+              throw 'Could not launch $uri';
+            }
+          },
+          icon: "assets/images/github.svg",
+        ),
+        _FooterLinkItems(
+          onPressed: () async {
+            final Uri uri =
+                Uri.parse("www.linkedin.com/in/sumitsinghbharangar");
+
+            if (!await launchUrl(
+              uri,
+              mode: LaunchMode.externalApplication,
+            )) {
+              throw 'Could not launch $uri';
+            }
+          },
+          icon: "assets/images/linkedin.svg",
+        ),
+        _FooterLinkItems(
+          onPressed: () async {
+            final Uri uri = Uri.parse("https://x.com/sumit_bharangar");
+
+            if (!await launchUrl(
+              uri,
+              mode: LaunchMode.externalApplication,
+            )) {
+              throw 'Could not launch $uri';
+            }
+          },
+          icon: "assets/images/twitter.svg",
+        ),
       ],
     );
   }

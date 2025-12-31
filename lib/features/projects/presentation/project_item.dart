@@ -5,6 +5,7 @@ import 'package:my_portfolio/constants/app_colors.dart';
 import 'package:my_portfolio/constants/app_extensions.dart';
 import 'package:my_portfolio/widgets/seo_text.dart';
 import 'package:seo_renderer/renderers/text_renderer/text_renderer_style.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProjectItem extends StatelessWidget {
   final String imgUrl;
@@ -38,7 +39,16 @@ class ProjectItem extends StatelessWidget {
             AspectRatio(
               aspectRatio: 1.5,
               child: InkWell(
-                onTap: () {},
+                onTap: () async {
+                  final Uri uri = Uri.parse(link);
+
+                  if (!await launchUrl(
+                    uri,
+                    mode: LaunchMode.externalApplication,
+                  )) {
+                    throw 'Could not launch $link';
+                  }
+                },
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image.asset(
@@ -78,14 +88,32 @@ class ProjectItem extends StatelessWidget {
               children: [
                 const Gap(10),
                 Bounce(
-                  onTap: () {},
+                  onTap: () async {
+                    final Uri uri = Uri.parse(link);
+
+                    if (!await launchUrl(
+                      uri,
+                      mode: LaunchMode.externalApplication,
+                    )) {
+                      throw 'Could not launch $link';
+                    }
+                  },
                   child: const Chip(
                     label: Text("Source"),
                   ),
                 ),
                 const Gap(10),
                 Bounce(
-                  onTap: () {},
+                  onTap: () async {
+                    final Uri uri = Uri.parse(apkLink);
+
+                    if (!await launchUrl(
+                      uri,
+                      mode: LaunchMode.externalApplication,
+                    )) {
+                      throw 'Could not launch $apkLink';
+                    }
+                  },
                   child: const Chip(
                     label: Text("Get APK"),
                   ),
