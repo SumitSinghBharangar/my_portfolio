@@ -1,46 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/constants/app_colors.dart';
+
 import 'package:my_portfolio/constants/app_extensions.dart';
 import 'package:my_portfolio/widgets/seo_text.dart';
 
-class PrimaryButton extends StatelessWidget {
-  final String title;
-  const PrimaryButton({
-    super.key,
-    required this.title,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {},
-      child: Text(
-        title,
-        style: TextStyle(
-          fontWeight: FontWeight.w500,
-          color: AppColors.gray[100],
-        ),
-      ),
-    );
-  }
-}
-
 class OutlineButton extends StatelessWidget {
   final String title;
+  final VoidCallback ontap;
   const OutlineButton({
     super.key,
     required this.title,
+    required this.ontap,
   });
 
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-      onPressed: () {},
-      child: SEOText(
-        title,
-        style: TextStyle(
-            fontWeight: FontWeight.w500,
-            color: context.colorScheme.onBackground),
+      onPressed: ontap,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: SEOText(
+          title,
+          style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+              color: context.colorScheme.onBackground),
+        ),
       ),
     );
   }

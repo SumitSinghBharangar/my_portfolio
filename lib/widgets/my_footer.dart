@@ -169,6 +169,9 @@ class _FooterLinkItems extends StatelessWidget {
       onPressed: onPressed,
       icon: SvgPicture.asset(
         icon,
+        height: 20,
+        width: 20,
+        fit: BoxFit.cover,
         colorFilter:
             ColorFilter.mode(context.colorScheme.onBackground, BlendMode.srcIn),
       ),

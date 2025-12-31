@@ -4,6 +4,7 @@ import 'package:my_portfolio/constants/app_extensions.dart';
 import 'package:my_portfolio/constants/app_size.dart';
 import 'package:my_portfolio/features/home/presentation/hero_images.dart';
 import 'package:my_portfolio/features/home/presentation/hero_texts.dart';
+import 'package:my_portfolio/widgets/styled_buttons.dart';
 
 class HeroWidget extends StatelessWidget {
   const HeroWidget({super.key});
@@ -48,13 +49,18 @@ class _LargeHero extends StatelessWidget {
     return Row(
       children: [
         const Expanded(child: HeroImages()),
-        Gap(Insets.xxxl),
+        Gap(Insets.xxxl - 20),
         Expanded(
             flex: 2,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const HeroTexts(),
                 Gap(Insets.xxxl),
+                OutlineButton(
+                  title: "Download CV",
+                  ontap: () {},
+                )
               ],
             ))
       ],
